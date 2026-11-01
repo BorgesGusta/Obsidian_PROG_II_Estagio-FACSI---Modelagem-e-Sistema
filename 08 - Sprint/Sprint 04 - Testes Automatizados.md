@@ -2,73 +2,70 @@
 
 ## Status
 
-🟡 Em andamento
+🟡 Concluída localmente, aguardando commit e push
 
 ## Objetivo
 
-Transformar as regras já implementadas em verificações automáticas com JUnit 5.
+Transformar as regras implementadas em verificações automáticas com JUnit 5.
 
 ## Parte 1 — Carga horária e simultaneidade
 
-**Status:** 🟡 Implementada localmente, aguardando versionamento
+**Status:** ✅ Concluída
 
-### Estrutura
-- [x] adicionar JUnit 5 ao pom.xml
-- [x] criar ValidadorCargaHorariaTest
-- [x] criar EstagioTest
-
-### ValidadorCargaHorariaTest
-- [x] 6h no mesmo dia
-- [x] 7h no mesmo dia
-- [x] 30h na semana
-- [x] 36h na semana
-- [x] soma de estágios com sobreposição
-- [x] estágios sem sobreposição
-- [x] dois não obrigatórios simultâneos
-- [x] três não obrigatórios simultâneos
-- [x] três não obrigatórios sem três simultâneos
-
-### EstagioTest
-- [x] soma de registros da mesma data
-- [x] soma de registros da mesma semana
-- [x] períodos sobrepostos
-- [x] períodos separados
-- [x] fronteira inclusiva
-- [x] dataFimReal substitui dataFimPrevista
-
-### Resultado
-- [x] 15 testes executados
-- [x] 15 aprovados
-- [x] 0 falhas
-- [x] 0 erros
-- [x] mvn test — BUILD SUCCESS
-- [x] mvn compile — BUILD SUCCESS
-- [ ] commit
-- [ ] push
+- [x] JUnit 5 no pom.xml
+- [x] ValidadorCargaHorariaTest
+- [x] EstagioTest
+- [x] 15 testes
+- [x] limite diário
+- [x] limite semanal
+- [x] cálculo por data e semana
+- [x] sobreposição de períodos
+- [x] dataFimReal
+- [x] simultaneidade
+- [x] dois e três não obrigatórios
 
 ## Parte 2 — Formalização e encerramento
 
-**Status:** ⬜ Não iniciada
+**Status:** ✅ Concluída
 
-- [ ] ValidadorEstagioTest
-- [ ] início sem documentos
-- [ ] externo sem convênio
-- [ ] interno sem convênio
-- [ ] início sem âmbito
-- [ ] não obrigatório sem bolsa
-- [ ] não obrigatório sem auxílio-transporte
-- [ ] não obrigatório válido
-- [ ] obrigatório com menos de 170h
-- [ ] sem relatório
-- [ ] sem avaliação
-- [ ] avaliação não aprovada
-- [ ] encerramento válido
-- [ ] dataFimReal
-- [ ] mvn test
+- [x] ValidadorEstagioTest
+- [x] 17 testes
+- [x] início sem documentos
+- [x] externo sem convênio
+- [x] interno sem convênio
+- [x] sem âmbito
+- [x] não obrigatório sem bolsa
+- [x] não obrigatório sem auxílio-transporte
+- [x] não obrigatório válido
+- [x] iniciar() válido
+- [x] iniciar() inválido
+- [x] menos de 170h
+- [x] sem relatório
+- [x] sem avaliação
+- [x] avaliação não aprovada
+- [x] encerramento válido
+- [x] encerrar(null)
+- [x] encerramento inválido sem alterar estado
+- [x] dataFimReal registrada
+
+## Resultado geral
+
+- [x] 32 testes executados
+- [x] 32 aprovados
+- [x] 0 falhas
+- [x] 0 erros
+- [x] 0 ignorados
+- [x] mvn test — BUILD SUCCESS
+- [x] mvn compile — BUILD SUCCESS
+- [x] nenhum bug de produção encontrado
 - [ ] commit
 - [ ] push
 
-## Pontos de atenção
+## Pontos de atenção para refinamento
 
-- A semana de transição entre estágios sem sobreposição permanece como regra pendente de validação acadêmica.
-- Os testes de carga criam estágios ativos por meio de iniciar(), respeitando o fluxo atual do domínio. Esse acoplamento é aceitável nesta fase, mas pode ser refinado se a criação de fixtures ficar difícil no futuro.
+- Semana de transição entre estágios sem sobreposição continua pendente de validação acadêmica.
+- remunerado=false com valor de bolsa preenchido representa um estado inconsistente ainda não tratado.
+- Bolsa marcada como remunerada com valor zero já é rejeitada, mas não possui teste específico.
+- dataFimReal ainda aceita qualquer data não nula; falta decidir se deve ser posterior ao início e coerente com a última frequência.
+- Resultado da avaliação ainda é String e usa comparação exata com APROVADO.
+- Os testes de carga criam estágio ativo por iniciar(), respeitando o fluxo do domínio atual.
