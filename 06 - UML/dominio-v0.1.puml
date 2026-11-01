@@ -31,6 +31,7 @@ class Concedente {
 
 class Convenio {
   - id
+  - numeroReferencia
   - dataInicio
   - dataFim
   - status
@@ -47,6 +48,7 @@ class Vaga {
   - valorAuxilioTransporte
   - duracaoPrevista
   - requisitos
+  - quantidadePosicoes
   - status
 }
 
@@ -97,6 +99,7 @@ Pessoa <|-- Professor
 
 Concedente "1" -- "0..*" Convenio
 Concedente "1" -- "0..*" Vaga
+Vaga "0..*" --> "0..1" Pessoa : supervisorPrevisto
 
 Aluno "1" -- "0..*" Candidatura
 Vaga "1" -- "0..*" Candidatura
