@@ -1,4 +1,4 @@
-# Apólice de Seguro — versão 0.2
+# Apólice de Seguro — versão 0.3
 
 ## Definição
 
@@ -16,22 +16,24 @@ Representa a cobertura contra acidentes pessoais associada ao estágio.
 ## Relação com Estágio
 
 ```
-ApoliceSeguro 1 -------- 0..* Estagio
+Estagio 0..* -------- 0..* ApoliceSeguro
 ```
 
-Uma mesma apólice pode cobrir mais de um estágio quando isso for aplicável.
+Uma mesma apólice pode cobrir vários estágios e um estágio pode possuir mais de uma cobertura ao longo do tempo.
 
-Todo Estágio ativo deve estar coberto por seguro válido.
+## Regras confirmadas
 
-## Regras
-
-- a cobertura deve estar vigente no período do estágio;
 - o estágio não deve iniciar sem cobertura válida;
-- a apólice não deve ser apagada do histórico quando vencer;
-- a responsabilidade pela contratação pode variar conforme modalidade e arranjo institucional.
+- a cobertura deve permanecer válida durante o período correspondente;
+- a concedente é, como regra, responsável pela contratação do seguro;
+- no estágio obrigatório, a instituição de ensino pode assumir essa responsabilidade;
+- a apólice e suas substituições devem permanecer no histórico.
 
-## Questões abertas
+## Consequência de modelagem
 
-- Quem fornece o seguro em cada modalidade?
-- Uma apólice institucional pode cobrir vários alunos simultaneamente?
-- Como registrar substituição de apólice durante um estágio?
+Não fixar a responsabilidade pelo seguro diretamente em `Estagio`, pois ela depende da modalidade e do arranjo institucional.
+
+## Questões ainda abertas
+
+- Como a FACSI registra uma apólice institucional que cobre vários alunos?
+- Qual é o fluxo quando a apólice é substituída durante um vínculo?
