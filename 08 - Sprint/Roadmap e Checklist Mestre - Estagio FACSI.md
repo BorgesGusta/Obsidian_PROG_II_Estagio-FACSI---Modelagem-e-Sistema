@@ -4,7 +4,7 @@
 
 > Estado do projeto: implementação Java avançada.
 >
-> As Sprints 01, 02 e 03 estão concluídas. A Sprint 04 está concluída e versionada: 32 testes automatizados passam juntos.
+> As Sprints 01, 02 e 03 estão concluídas. As Sprints 01 a 04 estão concluídas. A Sprint 05 está em andamento, com refinamentos Java versionados e UML final em PlantUML criada; 48 testes passam.
 
 ---
 
@@ -131,16 +131,16 @@
 ### Sprint 05 — Refinamento e UML final
 **Status:** 🟡 Em andamento
 
-- [ ] Comparar código com UML
-- [ ] Atualizar Pessoa / Profissional
-- [ ] Adicionar AmbitoEstagio
-- [ ] Adicionar Frequência, Relatório e Avaliação
-- [ ] Revisar validadores e responsabilidades
-- [ ] Revisar cardinalidades
+- [x] Comparar código com UML
+- [x] Atualizar Pessoa / Profissional
+- [x] Adicionar AmbitoEstagio
+- [x] Adicionar Frequência, Relatório e Avaliação
+- [x] Revisar validadores e responsabilidades
+- [x] Revisar cardinalidades
 - [x] Revisar enums
 - [x] Revisar pendências técnicas registradas
 - [ ] Incorporar feedback do professor
-- [ ] Gerar UML final
+- [x] Gerar UML final
 - [ ] Gerar imagem final do diagrama
 
 ---
