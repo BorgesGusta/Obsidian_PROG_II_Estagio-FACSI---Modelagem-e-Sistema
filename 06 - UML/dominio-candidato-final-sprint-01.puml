@@ -1,0 +1,160 @@
+@startuml
+title Estágio FACSI — Diagrama de Classes — Candidato Final Sprint 01
+
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+
+package "Pessoas" {
+  abstract class Pessoa {
+    - id
+    - nome
+    - cpf
+    - email
+    - telefone
+  }
+
+  class Aluno {
+    - matricula
+    - curso
+    - situacaoAcademica
+  }
+
+  class Professor {
+    - siape
+    - unidadeAcademica
+  }
+
+  Pessoa <|-- Aluno
+  Pessoa <|-- Professor
+}
+
+package "Institucional" {
+  class Concedente {
+    - id
+    - nome
+    - tipo
+    - documento
+    - email
+    - telefone
+  }
+
+  class Convenio {
+    - id
+    - numeroReferencia
+    - dataInicio
+    - dataFim
+    - status
+  }
+
+  Concedente "1" -- "0..*" Convenio
+}
+
+package "Oportunidade" {
+  class Vaga {
+    - id
+    - titulo
+    - descricao
+    - modalidade
+    - cargaHorariaDiaria
+    - cargaHorariaSemanal
+    - valorBolsaOfertado
+    - valorAuxilioTransporteOfertado
+    - duracaoPrevista
+    - requisitos
+    - status
+  }
+
+  class Candidatura {
+    - id
+    - dataCandidatura
+    - dataDecisao
+    - status
+    - observacao
+  }
+
+  Concedente "1" -- "0..*" Vaga
+  Aluno "1" -- "0..*" Candidatura
+  Vaga "1" -- "0..*" Candidatura
+}
+
+package "Vínculo de Estágio" {
+  enum ModalidadeEstagio {
+    OBRIGATORIO
+    NAO_OBRIGATORIO
+  }
+
+  enum OrigemEstagio {
+    VAGA_PUBLICADA
+    CONTATO_DIRETO
+    PROJETO_EXTENSAO
+    PROJETO_PESQUISA
+    EMPRESA_JUNIOR
+    OUTRO
+  }
+
+  enum StatusEstagio {
+    EM_FORMALIZACAO
+    ATIVO
+    ENCERRADO
+    CANCELADO
+  }
+
+  class Estagio {
+    - id
+    - modalidade : ModalidadeEstagio
+    - origem : OrigemEstagio
+    - dataInicio
+    - dataFimPrevista
+    - dataFimReal
+    - cargaHorariaDiaria
+    - cargaHorariaSemanal
+    - cargaHorariaTotalPrevista
+    - status : StatusEstagio
+  }
+
+  class TermoCompromisso {
+    - id
+    - dataCriacao
+    - remunerado
+    - valorRemuneracao
+    - valorAuxilioTransporte
+    - status
+  }
+
+  class PlanoAtividades {
+    - id
+    - areaAtuacao
+    - justificativa
+    - objetivoGeral
+    - objetivosEspecificos
+    - descricaoAtividades
+    - adequacaoPedagogica
+    - cronograma
+    - status
+  }
+
+  class ApoliceSeguro {
+    - id
+    - numero
+    - seguradora
+    - dataInicio
+    - dataFim
+    - documentoReferencia
+  }
+
+  Aluno "1" -- "0..*" Estagio
+  Concedente "1" -- "0..*" Estagio
+  Convenio "0..1" -- "0..*" Estagio : fundamenta
+
+  Vaga "0..1" -- "0..1" Estagio : origem
+  Candidatura "0..1" -- "0..1" Estagio : origina
+
+  Estagio "0..*" --> "1" Pessoa : supervisor
+  Estagio "0..*" --> "1" Professor : orientador
+
+  Estagio "1" -- "0..1" TermoCompromisso
+  Estagio "1" -- "0..*" PlanoAtividades : histórico
+  Estagio "0..*" -- "0..*" ApoliceSeguro : cobertura
+}
+
+@enduml
