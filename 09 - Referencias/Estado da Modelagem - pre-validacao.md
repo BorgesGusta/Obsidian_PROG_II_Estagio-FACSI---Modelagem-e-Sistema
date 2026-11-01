@@ -1,53 +1,53 @@
 # Estado da Modelagem — pré-validação com o professor
 
-## Confirmado por norma/documentação
+## Base normativa vigente
 
-- Concedentes externas utilizam Convênio com a Unifesspa.
-- Vigência do Convênio entre 1 e 5 anos.
-- Estágio pode ocorrer por contato direto com concedente.
-- Atividades de extensão, pesquisa e Empresa Júnior podem compor fluxos de estágio conforme o regulamento.
-- Estágio não obrigatório exige contraprestação/bolsa e auxílio-transporte.
-- Jornada de ensino superior segue, como regra geral, 6h/dia e 30h/semana.
-- Estágio exige supervisão, orientação acadêmica, Termo de Compromisso, Plano de Atividades e seguro.
-- Plano de Atividades pode evoluir por aditivos ao Termo.
-- Supervisor é indicado pela concedente e deve possuir formação ou experiência compatível.
-- Supervisor pode acompanhar até 10 estagiários simultaneamente.
+A base geral principal passa a ser a **Resolução CONSEPE nº 921/2025**, que revogou a Resolução nº 016/2014.
 
-## Sustentado pela reunião com o professor Hugo
+O Regulamento FACSI 01/2022 continua sendo utilizado para as regras específicas do curso quando compatível com a norma geral vigente.
 
-- O sistema deve modelar dados estruturados, não apenas armazenar PDFs.
-- Convênios precisam preservar vigência e histórico.
-- Vaga, Candidatura e Estágio devem ser conceitos distintos.
-- Supervisor pode ser informado já no contexto da vaga.
-- Estágio pode ocorrer dentro da própria universidade.
-- Em casos internos, uma mesma pessoa pode exercer supervisão e orientação.
-- O modelo deve contemplar múltiplos vínculos e controle de carga horária.
+## Confirmado
 
-## Decisão de modelagem
+- Convênio externo com vigência de 1 a 5 anos.
+- Termo obrigatório e sem assinatura retroativa.
+- Plano de Atividades acompanha o Termo.
+- Prorrogação gera novo Plano anexado a Termo Aditivo.
+- Seguro antes do início.
+- Não obrigatório: seguro pela Concedente.
+- Obrigatório: seguro pela Unifesspa.
+- Não obrigatório sem contrapartida financeira é irregular.
+- Modalidade e remuneração são conceitos diferentes.
+- Limite geral de 6h/dia e 30h/semana considera o somatório dos estágios simultâneos.
+- Dois estágios não obrigatórios podem coexistir nas condições da Resolução 921/2025.
+- Supervisor acompanha até 10 estudantes simultaneamente na regra geral.
+- Estágio pode ter origem em contato direto, extensão e pesquisa.
+- Registro de frequência e relatórios fazem parte do acompanhamento.
 
-- Pessoa é superclasse de Aluno e Professor.
-- Supervisor é papel de Pessoa.
-- Orientador é Professor.
-- Candidatura é entidade associativa entre Aluno e Vaga.
+## Evidência dos documentos FACSI
+
+Os anexos usados no fluxo real confirmam:
+- Termo com dados de Concedente, aluno, Supervisor, Orientador, jornada, período, remuneração/auxílio e apólice;
+- Plano com aluno, Professor Orientador, empresa/instituição, Supervisor, período, carga semanal/total, área, justificativa, objetivos, atividades, adequação pedagógica e cronograma;
+- Registro de Frequência com data, horário, atividade e assinatura do Supervisor;
+- Relatório Final com tema, justificativa, objetivos, metodologia, atividades realizadas, dificuldades, conclusão e referências.
+
+## Decisões de modelagem
+
 - Estágio é a entidade central.
-- Vaga e Candidatura são opcionais na origem do Estágio.
-- Estágio referencia diretamente a Concedente e, quando aplicável, o Convênio usado.
-- OrigemEstagio permanece como enum na versão pré-validação.
-- Modalidade permanece registrada no Estágio para representar o vínculo formalizado.
+- Vaga e Candidatura são origens opcionais.
+- Supervisor é papel exercido por Pessoa.
+- Orientador é Professor.
+- Estágio referencia Concedente e Convênio quando aplicável.
+- Condições financeiras efetivas ficam no Termo.
+- Plano passa a ser `0..*` por Estágio para preservar prorrogações/novos planos.
+- Apólice permanece muitos-para-muitos com Estágio.
 
-## Pendente de validação institucional
+## Pendente
 
-- Uma Vaga pode ter várias posições?
-- Supervisor previsto na Vaga precisa ser o mesmo do Estágio?
-- Como registrar troca de Supervisor/Orientador?
-- Como a FACSI trata soma de carga horária de múltiplos estágios simultâneos?
-- Como o Orientador é escolhido?
-- Quais alterações além do Plano de Atividades geram aditivo?
-- Existem restrições adicionais do Convênio por campus/unidade/modalidade?
-- Quais pendências impedem encerramento ou abertura de novo estágio?
-
-## Status
-
-Modelo pronto para apresentação e validação com o professor Hugo.
-
-Ainda não é a UML final da disciplina: ela é a versão **pré-validação**.
+- Forma de cadastro de múltiplas oportunidades na mesma Vaga.
+- Momento de definição do Supervisor.
+- Forma de escolha do Orientador.
+- Pendências que bloqueiam abertura/encerramento.
+- Fluxo de troca de responsáveis.
+- Outras situações de Termo Aditivo.
+- Detalhamento de origem para extensão/pesquisa.
