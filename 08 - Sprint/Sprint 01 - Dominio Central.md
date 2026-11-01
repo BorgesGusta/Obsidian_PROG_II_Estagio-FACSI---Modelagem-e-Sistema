@@ -31,7 +31,7 @@ A Sprint 01 estará concluída quando tivermos:
 - [x] Definir Concedente
 - [x] Definir Convênio
 - [x] Definir Vaga
-- [ ] Definir Candidatura
+- [x] Definir Candidatura
 - [ ] Definir Estágio
 - [x] Definir Supervisor e Orientador — hipótese v0.1
 - [ ] Definir Termo de Compromisso
@@ -41,13 +41,14 @@ A Sprint 01 estará concluída quando tivermos:
 ### Relacionamentos
 - [ ] Definir cardinalidades finais
 - [x] Revisar herança versus papéis — primeira decisão
+- [x] Revisar Candidatura como entidade associativa
 - [ ] Revisar ciclo Candidatura → Estágio
 - [x] Revisar histórico de Convênios
 
 ### UML
 - [x] Criar UML v0.1
 - [ ] Revisar UML v0.1
-- [ ] Promover para UML v0.2 após Candidatura + Estágio
+- [ ] Promover para UML v0.2 após Estágio
 - [ ] Registrar decisões decorrentes da UML
 
 ### Validação
