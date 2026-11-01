@@ -4,7 +4,7 @@
 
 > Estado do projeto: implementação Java avançada.
 >
-> As Sprints 01, 02 e 03 estão concluídas. A Sprint 04 está em andamento, com a Parte 1 de testes automatizados concluída localmente e aguardando versionamento.
+> As Sprints 01, 02 e 03 estão concluídas. A Sprint 04 está funcionalmente concluída localmente: 32 testes automatizados passam juntos, faltando apenas versionar as alterações.
 
 ---
 
@@ -73,47 +73,58 @@
 ---
 
 ### Sprint 04 — Testes automatizados
-**Status:** 🟡 Em andamento
+**Status:** 🟡 Concluída localmente, aguardando commit e push
 
 #### Parte 1 — Carga horária e simultaneidade
-**Status:** 🟡 Implementada localmente, aguardando commit
-
-- [x] Adicionar JUnit 5
-- [x] Testar cálculo de horas por data
-- [x] Testar cálculo de horas por semana
-- [x] Testar limite diário
-- [x] Testar limite semanal
-- [x] Testar sobreposição de períodos
-- [x] Testar uso de dataFimReal
-- [x] Testar estágios simultâneos
-- [x] Testar estágios sem sobreposição
-- [x] Testar dois não obrigatórios simultâneos
-- [x] Testar três não obrigatórios simultâneos
-- [x] Testar três não obrigatórios que nunca coincidem ao mesmo tempo
-- [x] Executar 15 testes com sucesso
-- [x] mvn test — BUILD SUCCESS
-- [x] mvn compile — BUILD SUCCESS
-- [ ] Commit
-- [ ] Push
+- [x] JUnit 5 configurado
+- [x] 15 testes criados
+- [x] cálculo de horas por data
+- [x] cálculo de horas por semana
+- [x] limite diário
+- [x] limite semanal
+- [x] sobreposição de períodos
+- [x] uso de dataFimReal
+- [x] estágios simultâneos
+- [x] estágios sem sobreposição
+- [x] dois não obrigatórios simultâneos
+- [x] três não obrigatórios simultâneos
+- [x] três não obrigatórios que nunca coincidem ao mesmo tempo
 
 #### Parte 2 — Formalização e encerramento
-**Status:** ⬜ Não iniciada
+- [x] 17 testes criados
+- [x] início sem documentos
+- [x] externo sem convênio
+- [x] interno sem convênio
+- [x] início sem âmbito
+- [x] não obrigatório sem bolsa
+- [x] não obrigatório sem auxílio-transporte
+- [x] não obrigatório válido
+- [x] iniciar() válido e inválido
+- [x] encerramento obrigatório com menos de 170h
+- [x] encerramento sem relatório
+- [x] encerramento sem avaliação
+- [x] avaliação não aprovada
+- [x] encerramento válido
+- [x] encerrar(null)
+- [x] dataFimReal registrada corretamente
 
-- [ ] Testar início sem documentos
-- [ ] Testar início externo sem convênio
-- [ ] Testar início interno sem convênio
-- [ ] Testar início sem âmbito
-- [ ] Testar não obrigatório sem bolsa
-- [ ] Testar não obrigatório sem auxílio-transporte
-- [ ] Testar não obrigatório válido
-- [ ] Testar encerramento com menos de 170h
-- [ ] Testar encerramento sem relatório
-- [ ] Testar encerramento sem avaliação
-- [ ] Testar avaliação não aprovada
-- [ ] Testar encerramento válido
-- [ ] Testar registro de dataFimReal
-- [ ] Executar mvn test
-- [ ] Commit e push
+#### Resultado
+- [x] 32 testes executados
+- [x] 32 aprovados
+- [x] 0 falhas
+- [x] 0 erros
+- [x] 0 ignorados
+- [x] mvn test — BUILD SUCCESS
+- [x] mvn compile — BUILD SUCCESS
+- [x] nenhum bug de produção encontrado
+- [ ] commit
+- [ ] push
+
+### Pontos para refinamento
+- [ ] avaliar inconsistência remunerado=false com valor de bolsa preenchido
+- [ ] avaliar teste específico para bolsa marcada como remunerada com valor zero
+- [ ] validar coerência de dataFimReal com início e último registro
+- [ ] substituir resultado textual da avaliação por enum quando formalizado
 
 ---
 
@@ -124,9 +135,10 @@
 - [ ] Atualizar Pessoa / Profissional
 - [ ] Adicionar AmbitoEstagio
 - [ ] Adicionar Frequência, Relatório e Avaliação
-- [ ] Representar validadores quando fizer sentido
+- [ ] Revisar validadores e responsabilidades
 - [ ] Revisar cardinalidades
 - [ ] Revisar enums
+- [ ] Revisar pendências técnicas registradas
 - [ ] Incorporar feedback do professor
 - [ ] Gerar UML final
 - [ ] Gerar imagem final do diagrama
@@ -151,10 +163,9 @@
 
 ## Próxima ação imediata
 
-1. versionar a Sprint 04 — Parte 1;
-2. iniciar testes de formalização e encerramento;
-3. executar mvn test;
-4. revisar antes do commit final da Sprint 04.
+1. versionar os testes da Sprint 04;
+2. confirmar working tree limpa;
+3. iniciar Sprint 05 — refinamento do domínio e UML final.
 
 ## Fora por enquanto
 
