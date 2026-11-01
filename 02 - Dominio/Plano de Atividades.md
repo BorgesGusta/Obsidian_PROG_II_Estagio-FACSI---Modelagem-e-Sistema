@@ -1,4 +1,4 @@
-# Plano de Atividades — versão 0.2
+# Plano de Atividades — versão 0.3
 
 ## Definição
 
@@ -40,14 +40,22 @@ O plano envolve, no mínimo:
 - supervisor;
 - orientador.
 
+## Evolução do plano
+
+A Lei nº 11.788/2008 determina que o Plano de Atividades seja incorporado ao Termo de Compromisso por meio de **aditivos**, à medida que o desempenho do estudante é avaliado progressivamente.
+
+### Consequência de modelagem
+
+O plano pode mudar ao longo do estágio e o sistema deve preservar histórico dessas alterações.
+
+Na v0.3, mantemos `PlanoAtividades` como entidade principal e registramos como requisito futuro o versionamento/aditivos, sem ainda criar uma classe extra.
+
 ## Responsabilidade
 
 O Plano não deve ser apenas um anexo.
 
-O sistema deve conseguir representar suas atividades e situação de aprovação.
+O sistema deve conseguir representar suas atividades, situação de aprovação e evolução ao longo do vínculo.
 
-## Questões abertas
+## Questão ainda aberta
 
-- Pode ser alterado durante o estágio?
-- Se alterado, devemos guardar versões anteriores?
-- Quem aprova formalmente cada versão?
+- Quem aprova formalmente cada alteração no fluxo da FACSI?
