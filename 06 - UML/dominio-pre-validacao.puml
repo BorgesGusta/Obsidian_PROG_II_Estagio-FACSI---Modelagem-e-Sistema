@@ -1,5 +1,5 @@
 @startuml
-title Estágio FACSI — Modelo de Domínio (pré-validação)
+title Estágio FACSI — Modelo de Domínio (pré-validação documental)
 
 skinparam classAttributeIconSize 0
 skinparam linetype ortho
@@ -57,11 +57,10 @@ package "Oportunidade" {
     - modalidade
     - cargaHorariaDiaria
     - cargaHorariaSemanal
-    - valorBolsa
-    - valorAuxilioTransporte
+    - valorBolsaOfertado
+    - valorAuxilioTransporteOfertado
     - duracaoPrevista
     - requisitos
-    - quantidadePosicoes
     - status
   }
 
@@ -74,7 +73,6 @@ package "Oportunidade" {
   }
 
   Concedente "1" -- "0..*" Vaga
-  Vaga "0..*" --> "0..1" Pessoa : supervisorPrevisto
   Aluno "1" -- "0..*" Candidatura
   Vaga "1" -- "0..*" Candidatura
 }
@@ -110,24 +108,32 @@ package "Vínculo de Estágio" {
     - dataFimReal
     - cargaHorariaDiaria
     - cargaHorariaSemanal
+    - cargaHorariaTotalPrevista
     - status : StatusEstagio
   }
 
   class TermoCompromisso {
     - id
     - dataCriacao
-    - dataAceiteAluno
-    - dataAceiteConcedente
-    - dataAceiteInstituicao
+    - remunerado
+    - valorRemuneracao
+    - valorAuxilioTransporte
+    - horasSemanais
+    - cargaHorariaTotalPrevista
+    - dataInicio
+    - dataFim
     - status
   }
 
   class PlanoAtividades {
     - id
-    - objetivo
-    - descricaoAtividades
+    - areaAtuacao
     - justificativa
+    - objetivoGeral
+    - objetivosEspecificos
+    - descricaoAtividades
     - adequacaoPedagogica
+    - cronograma
     - status
   }
 
@@ -150,24 +156,30 @@ package "Vínculo de Estágio" {
   Estagio "0..*" --> "1" Professor : orientador
 
   Estagio "1" -- "0..1" TermoCompromisso
-  Estagio "1" -- "0..1" PlanoAtividades
+  Estagio "1" -- "0..*" PlanoAtividades : histórico
   Estagio "0..*" -- "0..*" ApoliceSeguro : cobertura
 }
 
 note right of Estagio
-  Vaga e Candidatura são opcionais.
-  O Estágio pode nascer de contato direto,
-  extensão, pesquisa ou Empresa Júnior.
+  O limite geral considera o somatório
+  de estágios simultâneos:
+  6h/dia e 30h/semana.
 end note
 
-note bottom of Convenio
-  Para concedente externa, o convênio
-  deve estar válido quando aplicável.
+note right of TermoCompromisso
+  Modalidade ≠ remuneração.
+  Não obrigatório exige
+  contrapartida financeira.
 end note
 
 note bottom of PlanoAtividades
-  Alterações do plano podem ser formalizadas
-  por aditivos ao Termo de Compromisso.
+  Prorrogação exige novo Plano
+  anexado ao Termo Aditivo.
+end note
+
+note bottom of ApoliceSeguro
+  Uma apólice institucional pode
+  cobrir vários estagiários.
 end note
 
 @enduml
