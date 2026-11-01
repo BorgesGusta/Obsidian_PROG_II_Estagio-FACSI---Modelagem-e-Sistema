@@ -106,9 +106,9 @@ Vaga "0..*" --> "0..1" Pessoa : supervisorPrevisto
 Aluno "1" -- "0..*" Candidatura
 Vaga "1" -- "0..*" Candidatura
 
-Candidatura "1" -- "0..1" Estagio : pode originar >
+Candidatura "0..1" -- "0..1" Estagio : pode originar >
 Aluno "1" -- "0..*" Estagio
-Vaga "1" -- "0..*" Estagio
+Vaga "0..1" -- "0..*" Estagio : origem opcional >
 
 Estagio "0..*" --> "1" Pessoa : supervisor
 Estagio "0..*" --> "1" Pessoa : orientador
