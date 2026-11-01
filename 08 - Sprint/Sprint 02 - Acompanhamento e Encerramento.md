@@ -1,5 +1,9 @@
 # Sprint 02 — Acompanhamento e Encerramento
 
+## Status
+
+✅ Concluída
+
 ## Objetivo
 
 Representar no domínio o que acontece depois da formalização do estágio: acompanhamento de horas e atividades, relatório final e avaliação.
@@ -18,6 +22,7 @@ Representar no domínio o que acontece depois da formalização do estágio: aco
 - [x] BUILD SUCCESS
 - [x] Execução sem exceções
 - [x] Commit realizado
+- [x] Push realizado
 
 ## Parte 2 — Relatório e avaliação
 
@@ -39,8 +44,8 @@ Representar no domínio o que acontece depois da formalização do estágio: aco
 - [x] Cenário atualizado para Estagio ATIVO
 - [x] BUILD SUCCESS
 - [x] Execução sem exceções
-- [ ] Commit realizado
-- [ ] Push realizado
+- [x] Commit realizado
+- [x] Push realizado
 
 ## Decisões adiadas
 
@@ -57,11 +62,9 @@ Esses pontos seguem para a Sprint 03 ou para refinamento posterior.
 
 ## Definição de pronto
 
-A Sprint 02 termina quando:
-
-- frequência estiver representada;
-- horas puderem ser somadas;
-- relatório final estiver representado;
-- avaliação estiver representada;
-- cenário de demonstração executar sem exceções;
-- as duas partes estiverem versionadas.
+- [x] frequência representada;
+- [x] horas podem ser somadas;
+- [x] relatório final representado;
+- [x] avaliação representada;
+- [x] cenário de demonstração executa sem exceções;
+- [x] as duas partes estão versionadas.
