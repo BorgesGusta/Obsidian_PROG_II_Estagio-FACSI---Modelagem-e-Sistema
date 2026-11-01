@@ -2,7 +2,7 @@
 
 ## Objetivo atual
 
-Iniciar a Sprint 04 e transformar as regras implementadas nas Sprints anteriores em testes automatizados.
+Concluir a Sprint 04 com testes automatizados das regras de carga horária, formalização e encerramento.
 
 ## Estado atual
 
@@ -15,34 +15,31 @@ Iniciar a Sprint 04 e transformar as regras implementadas nas Sprints anteriores
 ### Sprint 03 — Regras de negócio
 **Status:** ✅ Concluída
 
-#### Carga horária e simultaneidade
-- [x] 6h/dia
-- [x] 30h/semana
+### Sprint 04 — Testes automatizados
+**Status:** 🟡 Em andamento
+
+#### Parte 1 — Carga horária e simultaneidade
+- [x] JUnit 5 configurado
+- [x] 15 testes criados
+- [x] cálculo de horas
+- [x] limites diário e semanal
 - [x] sobreposição de períodos
-- [x] estágios simultâneos
-- [x] dois não obrigatórios
-- [x] ValidadorCargaHoraria
+- [x] simultaneidade
+- [x] dois/três não obrigatórios
+- [x] mvn test
+- [x] mvn compile
+- [ ] commit e push
 
-#### Formalização e encerramento
-- [x] Termo
-- [x] Plano
-- [x] Seguro
-- [x] AmbitoEstagio
-- [x] Convênio para externo
-- [x] Contrapartida financeira
-- [x] podeIniciar()
-- [x] podeEncerrar()
-- [x] 170h para obrigatório
-- [x] dataFimReal
-- [x] ValidadorEstagio
-- [x] Commit e push
-
-### Sprint 04 — Próximo bloco
-- [ ] configurar JUnit
-- [ ] testes de carga horária
-- [ ] testes de simultaneidade
-- [ ] testes de formalização
-- [ ] testes de encerramento
+#### Parte 2 — Formalização e encerramento
+- [ ] início sem documentos
+- [ ] externo sem convênio
+- [ ] interno sem convênio
+- [ ] sem âmbito
+- [ ] não obrigatório sem bolsa
+- [ ] não obrigatório sem auxílio
+- [ ] encerramento < 170h
+- [ ] encerramento válido
+- [ ] dataFimReal
 - [ ] mvn test
 - [ ] commit e push
 
@@ -51,7 +48,7 @@ Iniciar a Sprint 04 e transformar as regras implementadas nas Sprints anteriores
 - Sprint 01 — Domínio central: ✅
 - Sprint 02 — Acompanhamento e encerramento: ✅
 - Sprint 03 — Regras de negócio: ✅
-- Sprint 04 — Testes automatizados: ⬜
+- Sprint 04 — Testes automatizados: 🟡
 - Sprint 05 — UML final e refinamento: ⬜
 - Sprint 06 — Entrega e apresentação: ⬜
 
