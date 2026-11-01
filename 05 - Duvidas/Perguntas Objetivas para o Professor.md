@@ -2,67 +2,64 @@
 
 ## Prioridade alta
 
-### 1. Quantidade de posições por Vaga
+### 1. Cadastro da Vaga
 
-Uma única Vaga pode representar várias posições disponíveis ou devemos cadastrar uma Vaga para cada posição?
+Quando uma concedente oferece, por exemplo, mais de uma oportunidade com as mesmas condições, vocês preferem:
+- uma única Vaga com quantidade disponível; ou
+- uma Vaga cadastrada para cada oportunidade?
 
-### 2. Supervisor da Vaga e do Estágio
+### 2. Supervisor na Vaga
 
-O supervisor informado na Vaga é apenas uma previsão ou deve necessariamente ser o supervisor efetivo do Estágio?
+No processo real, é necessário informar o Supervisor já quando a Vaga é cadastrada ou ele só precisa ser definido na formalização do Estágio?
 
-### 3. Troca de Supervisor ou Orientador
+### 3. Escolha do Orientador
 
-Durante um Estágio ativo, Supervisor ou Orientador podem ser substituídos?
+Como o Professor Orientador é definido:
+- pelo Coordenador de Estágio;
+- pelo aluno;
+- por distribuição entre professores;
+- ou por outro fluxo?
 
-Se sim, precisamos manter histórico das alterações?
+### 4. Pendências
 
-### 4. Múltiplos estágios simultâneos
+Quais pendências de um estágio anterior impedem:
+- iniciar outro estágio;
+- considerar o vínculo anterior encerrado?
 
-Quando um aluno possui mais de um estágio simultâneo, qual regra a FACSI utiliza para validar a soma das cargas horárias?
+## Prioridade secundária
 
-### 5. Escolha do Orientador
+### 5. Troca de Supervisor ou Orientador
 
-O Orientador é escolhido individualmente para cada Estágio, definido pela coordenação ou existe outra regra?
-
-## Prioridade média
+Se houver troca durante um estágio, qual documento/processo a FACSI utiliza? Precisamos preservar histórico dessa mudança?
 
 ### 6. Origem do Estágio
 
-Para o sistema, faz sentido registrar explicitamente a origem como:
+Para a modelagem, faz sentido manter um campo `origem` com:
 - VAGA_PUBLICADA;
 - CONTATO_DIRETO;
 - PROJETO_EXTENSAO;
 - PROJETO_PESQUISA;
 - EMPRESA_JUNIOR;
-- OUTRO?
+- OUTRO;
 
-Ou o professor prefere que extensão/pesquisa sejam modelados por entidades próprias?
+ou extensão/pesquisa deveriam ser representados por entidades próprias?
 
 ### 7. Aditivos
 
-A legislação prevê aditivos ao Termo para atualização do Plano de Atividades.
-
-Na prática da FACSI:
-- quem aprova esses aditivos?
-- quais outras alterações geram aditivo?
+Além de prorrogação e novo Plano de Atividades, quais alterações normalmente exigem Termo Aditivo no fluxo da FACSI?
 
 ### 8. Convênio
 
-Além dos cursos contemplados, o Convênio pode restringir:
-- campus;
-- unidade acadêmica;
-- modalidade de estágio?
+Além do curso contemplado, existem restrições operacionais por campus, unidade acadêmica ou modalidade?
 
-### 9. Pendências de encerramento
+## Já resolvido por documentação
 
-Quais pendências impedem que um Estágio seja considerado formalmente encerrado?
+Não precisamos mais perguntar sobre soma de carga horária:
+- o limite geral considera o **somatório dos estágios simultâneos**;
+- regra geral: 6h/dia e 30h/semana;
+- dois estágios não obrigatórios podem coexistir nas condições da Resolução 921/2025.
 
-### 10. Novo estágio com pendências
-
-Um aluno pode iniciar novo Estágio enquanto possui pendências de vínculo anterior?
-
-## Objetivo da reunião
-
-Não revisar todo o projeto do zero.
-
-Validar apenas as decisões acima e confirmar se a UML v0.2/v0.3 representa corretamente o processo real da FACSI.
+Também está confirmado que:
+- estágio obrigatório e remuneração são conceitos distintos;
+- estágio não obrigatório sem contrapartida financeira é irregular;
+- prorrogação exige novo Plano anexado ao Termo Aditivo.
