@@ -129,7 +129,7 @@
 ---
 
 ### Sprint 05 — Refinamento e UML final
-**Status:** ⬜ Não iniciada
+**Status:** 🟡 Em andamento
 
 - [ ] Comparar código com UML
 - [ ] Atualizar Pessoa / Profissional
@@ -137,8 +137,8 @@
 - [ ] Adicionar Frequência, Relatório e Avaliação
 - [ ] Revisar validadores e responsabilidades
 - [ ] Revisar cardinalidades
-- [ ] Revisar enums
-- [ ] Revisar pendências técnicas registradas
+- [x] Revisar enums
+- [x] Revisar pendências técnicas registradas
 - [ ] Incorporar feedback do professor
 - [ ] Gerar UML final
 - [ ] Gerar imagem final do diagrama
@@ -163,9 +163,9 @@
 
 ## Próxima ação imediata
 
-1. iniciar Sprint 05 — refinamento do domínio e UML final;
-2. comparar a UML candidata com o código atual;
-3. decidir quais refinamentos entram antes da UML final.
+1. versionar os refinamentos da Sprint 05;
+2. atualizar o PlantUML com o código consolidado;
+3. revisar cardinalidades e gerar a UML final.
 
 ## Fora por enquanto
 
