@@ -1,4 +1,4 @@
-# Relacionamentos — versão 0.1
+# Relacionamentos — versão 0.2
 
 ## Pessoa, Aluno e Professor
 
@@ -6,21 +6,11 @@
 - Aluno especializa Pessoa.
 - Professor especializa Pessoa.
 
-### Motivo
-Aluno e Professor possuem identidade pessoal comum, mas dados institucionais diferentes.
-
 ---
 
 ## Supervisor e Orientador
 
-Nesta versão, Supervisor e Orientador são tratados como **papéis exercidos por uma Pessoa no contexto de um estágio**, e não como subclasses permanentes de Pessoa.
-
-### Consequência
-A mesma pessoa pode:
-- atuar apenas como supervisor;
-- atuar apenas como orientador;
-- atuar nos dois papéis em estágios diferentes;
-- em casos permitidos, atuar nos dois papéis no mesmo estágio.
+Supervisor e Orientador são tratados como papéis exercidos por uma Pessoa no contexto de um estágio.
 
 ---
 
@@ -28,19 +18,11 @@ A mesma pessoa pode:
 
 `Concedente 1 ---- 0..* Convênio`
 
-Uma concedente pode possuir nenhum, um ou vários convênios ao longo do tempo.
-
-Um convênio pertence a exatamente uma concedente.
-
 ---
 
 ## Concedente e Vaga
 
 `Concedente 1 ---- 0..* Vaga`
-
-Uma concedente pode ofertar várias vagas.
-
-Cada vaga pertence a uma concedente.
 
 ---
 
@@ -56,15 +38,13 @@ Candidatura funciona como entidade associativa entre Aluno e Vaga.
 
 ## Candidatura e Estágio
 
-Uma candidatura selecionada pode originar um estágio.
+`Candidatura 0..1 ---- 0..1 Estágio`
 
-### Hipótese atual
-`Candidatura 1 ---- 0..1 Estágio`
+Uma candidatura selecionada pode originar no máximo um estágio.
 
-Nem toda candidatura gera estágio.
+Um estágio, porém, pode existir sem candidatura.
 
-### Dúvida aberta
-Confirmar se pode existir estágio sem candidatura registrada, por exemplo quando o aluno encontra diretamente a oportunidade.
+Isso cobre casos de contato direto com concedente e atividades de extensão/pesquisa.
 
 ---
 
@@ -72,20 +52,28 @@ Confirmar se pode existir estágio sem candidatura registrada, por exemplo quand
 
 `Aluno 1 ---- 0..* Estágio`
 
-Um aluno pode possuir vários estágios ao longo do tempo e, observadas as regras aplicáveis, pode possuir vínculos simultâneos.
-
 Cada estágio pertence a um aluno.
 
 ---
 
 ## Estágio e Vaga
 
+### Versão revisada
+
 `Vaga 1 ---- 0..* Estágio`
 
-Uma vaga pode originar um ou mais estágios caso represente mais de uma posição.
+Do ponto de vista do Estágio:
 
-### Dúvida aberta
-Confirmar se uma Vaga representa uma única posição ou pode possuir quantidade de vagas.
+`Estágio ---- 0..1 Vaga`
+
+Ou seja, uma vaga pode originar vários estágios quando houver mais de uma posição, mas um estágio pode não ter origem em uma vaga cadastrada.
+
+Casos possíveis sem Vaga cadastrada:
+- contato direto com concedente;
+- projeto/programa de extensão;
+- projeto/programa de pesquisa;
+- Empresa Júnior;
+- outros fluxos institucionais permitidos.
 
 ---
 
@@ -93,18 +81,11 @@ Confirmar se uma Vaga representa uma única posição ou pode possuir quantidade
 
 `Estágio 1 ---- 1 Pessoa : supervisor`
 
-A pessoa associada deve estar habilitada a exercer o papel de supervisor naquele vínculo.
-
-### Dúvida aberta
-Confirmar se deve haver histórico de troca de supervisor.
-
 ---
 
 ## Estágio e Orientador
 
 `Estágio 1 ---- 1 Pessoa : orientador`
-
-A pessoa associada deve ser apta a exercer o papel de orientação acadêmica.
 
 ---
 
@@ -112,22 +93,14 @@ A pessoa associada deve ser apta a exercer o papel de orientação acadêmica.
 
 `Estágio 1 ---- 0..1 TermoCompromisso`
 
-Durante a formalização, o termo pode ainda não existir ou não estar completo.
-
 ---
 
 ## Estágio e Plano de Atividades
 
 `Estágio 1 ---- 0..1 PlanoAtividades`
 
-O plano torna-se obrigatório para que o estágio possa efetivamente prosseguir.
-
 ---
 
 ## Estágio e Apólice de Seguro
 
 `ApoliceSeguro 1 ---- 0..* Estágio`
-
-Uma mesma apólice pode cobrir vários estágios quando aplicável.
-
-Cada estágio deve estar vinculado a uma apólice válida antes do início efetivo.
