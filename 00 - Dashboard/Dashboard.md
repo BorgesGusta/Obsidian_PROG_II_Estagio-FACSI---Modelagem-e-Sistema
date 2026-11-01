@@ -2,7 +2,7 @@
 
 ## Objetivo atual
 
-Concluir a Sprint 02 e iniciar as regras de negócio da Sprint 03, mantendo a implementação Java alinhada à modelagem e aos documentos reais da FACSI/Unifesspa.
+Iniciar a Sprint 03 e implementar as regras de negócio de carga horária, simultaneidade, formalização e encerramento.
 
 ## Estado atual
 
@@ -23,35 +23,40 @@ Concluir a Sprint 02 e iniciar as regras de negócio da Sprint 03, mantendo a im
 **Pendência acadêmica:** validação final com o professor Hugo.
 
 ### Sprint 02 — Acompanhamento e encerramento
-
-#### Parte 1
 - [x] Registro de Frequência
 - [x] Soma de horas realizadas
-- [x] Cenário no Main
-- [x] Commit e push
-
-#### Parte 2
 - [x] Relatório Final
 - [x] Avaliação do Estágio
 - [x] Relações com Estágio
 - [x] Main ajustado para Estágio ATIVO
 - [x] Build e execução
-- [ ] Commit
-- [ ] Push
+- [x] Commit da Parte 1
+- [x] Push da Parte 1
+- [x] Commit da Parte 2
+- [x] Push da Parte 2
 
-### Próximo bloco — Sprint 03
+### Sprint 03 — Próximo bloco
+
+#### Parte 1
 - [ ] Limite de 6h/dia
 - [ ] Limite de 30h/semana
+- [ ] Soma de registros do mesmo dia
 - [ ] Estágios simultâneos
-- [ ] Formalização obrigatória
-- [ ] Seguro / Plano / Termo
+- [ ] Dois estágios não obrigatórios
+- [ ] Cenários válidos e inválidos no Main
+
+#### Parte 2
+- [ ] Termo obrigatório
+- [ ] Plano de Atividades
+- [ ] Seguro
+- [ ] Convênio quando aplicável
 - [ ] Contrapartida do estágio não obrigatório
 - [ ] Encerramento e transições de status
 
 ## Linha do tempo
 
 - Sprint 01 — Domínio central: ✅
-- Sprint 02 — Acompanhamento e encerramento: 🟡
+- Sprint 02 — Acompanhamento e encerramento: ✅
 - Sprint 03 — Regras de negócio: ⬜
 - Sprint 04 — Testes automatizados: ⬜
 - Sprint 05 — UML final e refinamento: ⬜
