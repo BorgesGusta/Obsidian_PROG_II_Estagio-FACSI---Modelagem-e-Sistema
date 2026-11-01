@@ -1,0 +1,146 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Pessoa {
+  - id
+  - nome
+  - cpf
+  - email
+  - telefone
+}
+
+class Aluno {
+  - matricula
+  - curso
+  - situacaoAcademica
+}
+
+class Professor {
+  - siape
+  - unidadeAcademica
+}
+
+class Concedente {
+  - id
+  - nome
+  - tipo
+  - documento
+  - email
+  - telefone
+}
+
+class Convenio {
+  - id
+  - numeroReferencia
+  - dataInicio
+  - dataFim
+  - status
+}
+
+class Vaga {
+  - id
+  - titulo
+  - descricao
+  - modalidade
+  - cargaHorariaDiaria
+  - cargaHorariaSemanal
+  - valorBolsa
+  - valorAuxilioTransporte
+  - duracaoPrevista
+  - requisitos
+  - quantidadePosicoes
+  - status
+}
+
+class Candidatura {
+  - id
+  - dataCandidatura
+  - dataDecisao
+  - status
+  - observacao
+}
+
+enum OrigemEstagio {
+  VAGA_PUBLICADA
+  CONTATO_DIRETO
+  PROJETO_EXTENSAO
+  PROJETO_PESQUISA
+  EMPRESA_JUNIOR
+  OUTRO
+}
+
+enum ModalidadeEstagio {
+  OBRIGATORIO
+  NAO_OBRIGATORIO
+}
+
+enum StatusEstagio {
+  EM_FORMALIZACAO
+  ATIVO
+  ENCERRADO
+  CANCELADO
+}
+
+class Estagio {
+  - id
+  - modalidade : ModalidadeEstagio
+  - origem : OrigemEstagio
+  - dataInicio
+  - dataFimPrevista
+  - dataFimReal
+  - cargaHorariaDiaria
+  - cargaHorariaSemanal
+  - status : StatusEstagio
+}
+
+class TermoCompromisso {
+  - id
+  - dataCriacao
+  - dataAceiteAluno
+  - dataAceiteConcedente
+  - dataAceiteInstituicao
+  - status
+}
+
+class PlanoAtividades {
+  - id
+  - objetivo
+  - descricaoAtividades
+  - justificativa
+  - adequacaoPedagogica
+  - status
+}
+
+class ApoliceSeguro {
+  - id
+  - numero
+  - seguradora
+  - dataInicio
+  - dataFim
+  - documentoReferencia
+}
+
+Pessoa <|-- Aluno
+Pessoa <|-- Professor
+
+Concedente "1" -- "0..*" Convenio
+Concedente "1" -- "0..*" Vaga
+Concedente "1" -- "0..*" Estagio
+
+Vaga "0..*" --> "0..1" Pessoa : supervisorPrevisto
+
+Aluno "1" -- "0..*" Candidatura
+Vaga "1" -- "0..*" Candidatura
+
+Candidatura "0..1" -- "0..1" Estagio : origem opcional >
+Aluno "1" -- "0..*" Estagio
+Vaga "0..1" -- "0..*" Estagio : origem opcional >
+
+Estagio "0..*" --> "1" Pessoa : supervisor
+Estagio "0..*" --> "1" Pessoa : orientador
+
+Estagio "1" -- "0..1" TermoCompromisso
+Estagio "1" -- "0..1" PlanoAtividades
+ApoliceSeguro "1" -- "0..*" Estagio
+
+@enduml
