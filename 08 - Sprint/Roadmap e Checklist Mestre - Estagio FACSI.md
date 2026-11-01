@@ -4,104 +4,88 @@
 
 > Estado do projeto: implementação Java em andamento.
 >
-> A modelagem central e as Sprints 01 e 02 estão concluídas internamente. A validação final com o professor Hugo continua como pendência acadêmica, mas não bloqueia o avanço técnico.
+> As Sprints 01 e 02 estão concluídas. A Sprint 03 está em andamento, com a Parte 1 já concluída e versionada.
 
 ---
 
 ## Linha do tempo
 
 ### Sprint 01 — Domínio central
-**Status:** ✅ Concluída internamente
+**Status:** ✅ Concluída
 
-Objetivo: transformar regulamentos, documentos reais e explicações do professor em um modelo orientado a objetos consistente.
+- [x] Regulamentos e documentos analisados
+- [x] Domínio central modelado
+- [x] UML candidata a final
+- [x] Estrutura Java inicial
+- [x] Pessoa / Aluno / Professor / Profissional
+- [x] Concedente / Convênio
+- [x] Vaga / Candidatura
+- [x] Estágio
+- [x] Termo / Plano / Seguro
+- [x] Build e execução
+- [x] Commit e push
 
-- [x] Analisar Regulamento FACSI 2022
-- [x] Analisar Resolução CONSEPE 921/2025
-- [x] Confirmar revogação da Resolução 016/2014
-- [x] Analisar Termo de Compromisso
-- [x] Analisar Plano de Atividades
-- [x] Analisar Ficha de Frequência
-- [x] Analisar Relatório Final
-- [x] Analisar apólice institucional
-- [x] Modelar Pessoa, Aluno e Professor
-- [x] Criar Profissional para representar supervisor externo
-- [x] Modelar Concedente e Convênio
-- [x] Modelar Vaga e Candidatura
-- [x] Modelar Estágio como entidade central
-- [x] Modelar Termo de Compromisso
-- [x] Modelar Plano de Atividades
-- [x] Modelar Apólice de Seguro
-- [x] Separar modalidade de remuneração
-- [x] Representar origem opcional por Vaga/Candidatura
-- [x] Criar UML candidata a final
-- [x] Implementar estrutura inicial em Java
-- [x] Compilar e executar cenário de demonstração
-- [x] Commit Java: estrutura inicial do sistema de estágios
-
-**Pendência externa:**
+**Pendência acadêmica:**
 - [ ] Validar pontos operacionais com o professor Hugo
-- [ ] Aplicar ajustes finais no UML, caso o professor solicite
+- [ ] Aplicar ajustes finais no UML, caso necessário
 
 ---
 
 ### Sprint 02 — Acompanhamento e encerramento
 **Status:** ✅ Concluída
 
-#### Parte 1 — Frequência e acompanhamento
-**Status:** ✅ Concluída
-
-- [x] Criar RegistroFrequencia
-- [x] Relacionar registros ao Estagio
-- [x] Criar lista de registros no Estagio
-- [x] Criar adicionarRegistroFrequencia(...)
-- [x] Criar calcularHorasRealizadas()
-- [x] Atualizar Main
-- [x] Compilar
-- [x] Executar cenário
-- [x] Commit Java: registro de frequência do estágio
-- [x] Push realizado
+#### Parte 1 — Frequência
+- [x] RegistroFrequencia
+- [x] Soma de horas realizadas
+- [x] Cenário no Main
+- [x] Build e execução
+- [x] Commit e push
 
 #### Parte 2 — Relatório e avaliação
-**Status:** ✅ Concluída
-
-- [x] Criar RelatorioFinal
-- [x] Criar AvaliacaoEstagio
-- [x] Relacionar RelatorioFinal ao Estagio
-- [x] Relacionar AvaliacaoEstagio ao Estagio
-- [x] Atualizar Main
-- [x] Ajustar cenário para Estagio ATIVO
-- [x] Compilar
-- [x] Executar cenário sem exceções
-- [x] Revisar diff final
-- [x] Fazer commit da Parte 2
-- [x] Fazer push
-- [x] Marcar Sprint 02 como concluída
+- [x] RelatorioFinal
+- [x] AvaliacaoEstagio
+- [x] Relações com Estagio
+- [x] Cenário no Main
+- [x] Build e execução
+- [x] Commit e push
 
 ---
 
 ### Sprint 03 — Regras de negócio
-**Status:** ⬜ Não iniciada
+**Status:** 🟡 Em andamento
 
 #### Parte 1 — Carga horária e simultaneidade
-- [ ] Validar limite geral de 6h/dia
-- [ ] Validar limite geral de 30h/semana
-- [ ] Somar registros do mesmo dia
-- [ ] Avaliar horas fracionadas
-- [ ] Validar estágios simultâneos
-- [ ] Tratar regra dos dois estágios não obrigatórios
-- [ ] Criar métodos de validação claros
-- [ ] Atualizar Main com cenários válidos e inválidos
+**Status:** ✅ Concluída
+
+- [x] Validar limite geral de 6h/dia
+- [x] Validar limite geral de 30h/semana
+- [x] Somar registros do mesmo dia
+- [x] Validar estágios simultâneos
+- [x] Considerar sobreposição real de períodos
+- [x] Tratar até dois estágios não obrigatórios simultâneos
+- [x] Criar ValidadorCargaHoraria
+- [x] Criar cenários válidos e inválidos no Main
+- [x] Build e execução
+- [x] Commit e push
+- [ ] Definir horas fracionadas em etapa futura
+- [ ] Confirmar com professor caso de semana de transição entre estágios sem sobreposição
 
 #### Parte 2 — Formalização e encerramento
+**Status:** ⬜ Não iniciada
+
 - [ ] Validar Termo antes de estágio ativo
 - [ ] Validar Plano de Atividades
 - [ ] Validar Seguro
 - [ ] Validar Convênio quando aplicável
 - [ ] Validar contrapartida financeira do não obrigatório
-- [ ] Definir condição para encerramento
+- [ ] Definir podeIniciar()
+- [ ] Definir podeEncerrar()
 - [ ] Avaliar carga horária mínima obrigatória da FACSI
 - [ ] Definir transições de status
-- [ ] Revisar enums/status em String
+- [ ] Revisar status em String que merecem enum
+- [ ] Criar cenários válidos e inválidos no Main
+- [ ] Build e execução
+- [ ] Commit e push
 
 ---
 
@@ -113,8 +97,8 @@ Objetivo: transformar regulamentos, documentos reais e explicações do professo
 - [ ] Testar limite diário
 - [ ] Testar limite semanal
 - [ ] Testar estágios simultâneos
-- [ ] Testar documentação obrigatória
-- [ ] Testar estágio não obrigatório sem contrapartida
+- [ ] Testar formalização
+- [ ] Testar não obrigatório sem contrapartida
 - [ ] Testar encerramento válido
 - [ ] Testar cenários inválidos
 - [ ] Executar com mvn test
@@ -127,10 +111,9 @@ Objetivo: transformar regulamentos, documentos reais e explicações do professo
 - [ ] Comparar código com UML
 - [ ] Atualizar Pessoa / Profissional
 - [ ] Adicionar Frequência, Relatório e Avaliação ao UML
+- [ ] Adicionar regras/serviços auxiliares relevantes
 - [ ] Revisar cardinalidades
-- [ ] Revisar associações bidirecionais
 - [ ] Revisar enums
-- [ ] Revisar responsabilidades das classes
 - [ ] Incorporar feedback do professor
 - [ ] Gerar UML final
 - [ ] Gerar imagem final do diagrama
@@ -140,12 +123,11 @@ Objetivo: transformar regulamentos, documentos reais e explicações do professo
 ### Sprint 06 — Entrega e apresentação
 **Status:** ⬜ Não iniciada
 
-- [ ] Revisar README do repositório Java
+- [ ] Revisar README
 - [ ] Organizar documentação final
 - [ ] Garantir build limpo
 - [ ] Garantir testes passando
 - [ ] Preparar cenário demonstrável
-- [ ] Preparar explicação do domínio
 - [ ] Preparar explicação de OO
 - [ ] Preparar explicação das regras
 - [ ] Preparar roteiro de apresentação
@@ -155,14 +137,12 @@ Objetivo: transformar regulamentos, documentos reais e explicações do professo
 
 ## Próxima ação imediata
 
-1. iniciar Sprint 03 — Parte 1;
-2. implementar regras de carga horária e simultaneidade;
-3. validar com cenários no Main;
-4. revisar antes do próximo commit.
+1. iniciar Sprint 03 — Parte 2;
+2. implementar formalização e encerramento;
+3. validar cenários no Main;
+4. revisar antes do commit.
 
----
-
-## Assuntos que ficam fora por enquanto
+## Fora por enquanto
 
 - Spring Boot
 - JPA / Hibernate
@@ -171,5 +151,3 @@ Objetivo: transformar regulamentos, documentos reais e explicações do professo
 - frontend
 - autenticação
 - Docker
-
-Só entram se forem necessários para a disciplina ou solicitados pelo professor.
