@@ -25,34 +25,35 @@ A Sprint 01 estará concluída quando tivermos:
 - [x] Catalogar regras iniciais
 - [x] Registrar decisões iniciais
 - [x] Registrar dúvidas abertas
-- [ ] Definir atributos de Pessoa
-- [ ] Definir atributos de Aluno
-- [ ] Definir atributos de Professor
-- [ ] Definir Concedente
-- [ ] Definir Convênio
-- [ ] Definir Vaga
+- [x] Definir atributos de Pessoa
+- [x] Definir atributos de Aluno
+- [x] Definir atributos de Professor
+- [x] Definir Concedente
+- [x] Definir Convênio
+- [x] Definir Vaga
 - [ ] Definir Candidatura
 - [ ] Definir Estágio
-- [ ] Definir Supervisor e Orientador
+- [x] Definir Supervisor e Orientador — hipótese v0.1
 - [ ] Definir Termo de Compromisso
 - [ ] Definir Plano de Atividades
 - [ ] Definir Apólice de Seguro
 
 ### Relacionamentos
-- [ ] Definir cardinalidades
-- [ ] Revisar herança versus papéis
+- [ ] Definir cardinalidades finais
+- [x] Revisar herança versus papéis — primeira decisão
 - [ ] Revisar ciclo Candidatura → Estágio
-- [ ] Revisar histórico de Convênios
+- [x] Revisar histórico de Convênios
 
 ### UML
-- [ ] Criar UML v0.1
+- [x] Criar UML v0.1
 - [ ] Revisar UML v0.1
+- [ ] Promover para UML v0.2 após Candidatura + Estágio
 - [ ] Registrar decisões decorrentes da UML
 
 ### Validação
 - [ ] Consolidar dúvidas para o professor
 - [ ] Preparar resumo de uma página
-- [ ] Validar v0.1 com o professor
+- [ ] Validar v0.1/v0.2 com o professor
 
 ## Fora desta sprint
 
