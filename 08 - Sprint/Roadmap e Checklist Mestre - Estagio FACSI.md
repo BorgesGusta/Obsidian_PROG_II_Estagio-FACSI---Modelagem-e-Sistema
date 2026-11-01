@@ -4,7 +4,7 @@
 
 > Estado do projeto: implementação Java em andamento.
 >
-> A modelagem central e a Sprint 01 estão concluídas internamente. A validação final com o professor Hugo continua como pendência acadêmica, mas não bloqueia o avanço técnico.
+> A modelagem central e as Sprints 01 e 02 estão concluídas internamente. A validação final com o professor Hugo continua como pendência acadêmica, mas não bloqueia o avanço técnico.
 
 ---
 
@@ -45,7 +45,7 @@ Objetivo: transformar regulamentos, documentos reais e explicações do professo
 ---
 
 ### Sprint 02 — Acompanhamento e encerramento
-**Status:** 🟡 Em andamento
+**Status:** ✅ Concluída
 
 #### Parte 1 — Frequência e acompanhamento
 **Status:** ✅ Concluída
@@ -59,9 +59,10 @@ Objetivo: transformar regulamentos, documentos reais e explicações do professo
 - [x] Compilar
 - [x] Executar cenário
 - [x] Commit Java: registro de frequência do estágio
+- [x] Push realizado
 
 #### Parte 2 — Relatório e avaliação
-**Status:** 🟡 Implementada localmente, aguardando commit
+**Status:** ✅ Concluída
 
 - [x] Criar RelatorioFinal
 - [x] Criar AvaliacaoEstagio
@@ -71,10 +72,10 @@ Objetivo: transformar regulamentos, documentos reais e explicações do professo
 - [x] Ajustar cenário para Estagio ATIVO
 - [x] Compilar
 - [x] Executar cenário sem exceções
-- [ ] Revisar diff final
-- [ ] Fazer commit da Parte 2
-- [ ] Fazer push
-- [ ] Marcar Sprint 02 como concluída
+- [x] Revisar diff final
+- [x] Fazer commit da Parte 2
+- [x] Fazer push
+- [x] Marcar Sprint 02 como concluída
 
 ---
 
@@ -154,10 +155,10 @@ Objetivo: transformar regulamentos, documentos reais e explicações do professo
 
 ## Próxima ação imediata
 
-1. revisar alterações locais da Sprint 02 — Parte 2;
-2. fazer commit e push;
-3. marcar Sprint 02 como concluída;
-4. iniciar Sprint 03 — Parte 1: carga horária e simultaneidade.
+1. iniciar Sprint 03 — Parte 1;
+2. implementar regras de carga horária e simultaneidade;
+3. validar com cenários no Main;
+4. revisar antes do próximo commit.
 
 ---
 
