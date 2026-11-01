@@ -1,4 +1,4 @@
-# Termo de Compromisso — versão 0.2
+# Termo de Compromisso — versão 0.3
 
 ## Definição
 
@@ -39,17 +39,27 @@ Para ativação do vínculo, o termo deve estar formalizado quando exigido.
 
 O Termo não deve ser tratado apenas como arquivo PDF.
 
-O sistema deve representar o estado da formalização e, futuramente, os dados estruturados relevantes do termo.
+O sistema deve representar o estado da formalização e os dados estruturados relevantes.
+
+## Aditivos
+
+A Lei nº 11.788/2008 prevê expressamente que o Plano de Atividades seja incorporado ao Termo por **aditivos** ao longo do acompanhamento do estágio.
+
+### Consequência
+
+A existência de aditivos deixa de ser hipótese e passa a ser requisito confirmado.
+
+Na v0.3 ainda não criamos a entidade `AditivoTermo`; ela fica como evolução natural para a próxima etapa de modelagem.
 
 ## Regras
 
-- um Termo pertence a um único Estágio;
+- um Termo principal pertence a um único Estágio;
 - o termo deve identificar as partes do vínculo;
-- a formalização deve ocorrer antes do início efetivo do estágio;
-- alterações relevantes podem exigir aditivo ou nova formalização, conforme regra institucional.
+- deve ser celebrado antes do início efetivo;
+- mudanças no plano podem gerar aditivos;
+- o histórico dessas alterações não deve ser perdido.
 
-## Questões abertas
+## Questões ainda abertas
 
-- O termo pode ter versões/aditivos?
-- Quais campos precisam ser estruturados no sistema além dos aceites?
-- Como representar assinatura/aceite institucional?
+- Quais outros tipos de alteração, além do Plano de Atividades, a FACSI formaliza por aditivo?
+- Como representar assinatura/aceite institucional no sistema?
