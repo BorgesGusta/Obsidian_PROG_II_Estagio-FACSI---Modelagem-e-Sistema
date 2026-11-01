@@ -55,7 +55,9 @@ class Vaga {
 class Candidatura {
   - id
   - dataCandidatura
+  - dataDecisao
   - status
+  - observacao
 }
 
 class Estagio {
@@ -104,7 +106,7 @@ Vaga "0..*" --> "0..1" Pessoa : supervisorPrevisto
 Aluno "1" -- "0..*" Candidatura
 Vaga "1" -- "0..*" Candidatura
 
-Candidatura "1" -- "0..1" Estagio : origina >
+Candidatura "1" -- "0..1" Estagio : pode originar >
 Aluno "1" -- "0..*" Estagio
 Vaga "1" -- "0..*" Estagio
 
