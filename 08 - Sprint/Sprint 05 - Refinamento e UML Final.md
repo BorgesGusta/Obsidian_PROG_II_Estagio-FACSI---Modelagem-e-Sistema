@@ -23,6 +23,9 @@ Comparar a modelagem candidata da Sprint 01 com o código Java consolidado nas S
 
 ## Etapa 2 — Auditoria de comportamento
 
+**Status:** ✅ Concluída
+
+
 - [x] Revisar iniciar()
 - [x] Revisar encerrar(LocalDate)
 - [x] Revisar regras de 6h/dia e 30h/semana
@@ -47,6 +50,15 @@ Cada diferença será marcada como:
 - MELHORIA FUTURA — não precisa entrar na entrega atual.
 
 ## Etapa 4 — Pontos já identificados
+
+### Refinamentos Java concluídos
+- [x] período obrigatório e válido para iniciar
+- [x] convênio externo vigente na data de início
+- [x] apólice vigente na data de início
+- [x] dataFimReal coerente com início e última frequência
+- [x] 48 testes passando
+- [x] Main ajustado para dados de demonstração válidos
+
 
 ### Ajustar UML
 - [ ] adicionar Profissional como subclasse de Pessoa
