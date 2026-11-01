@@ -32,15 +32,15 @@ Iniciar a Sprint 05 de refinamento do modelo e UML final.
 ### Sprint 05 — Refinamento e UML final
 **Status:** 🟡 Em andamento
 - [x] comparar UML com código atual
-- [ ] atualizar Profissional
-- [ ] adicionar AmbitoEstagio
-- [ ] adicionar Frequência
-- [ ] adicionar Relatório e Avaliação
-- [ ] revisar validadores
+- [x] atualizar Profissional
+- [x] adicionar AmbitoEstagio
+- [x] adicionar Frequência
+- [x] adicionar Relatório e Avaliação
+- [x] revisar validadores
 - [x] revisar enums
-- [ ] revisar cardinalidades
+- [x] revisar cardinalidades
 - [x] tratar pendências técnicas prioritárias
-- [ ] gerar UML final
+- [x] gerar UML final
 
 ## Linha do tempo
 
