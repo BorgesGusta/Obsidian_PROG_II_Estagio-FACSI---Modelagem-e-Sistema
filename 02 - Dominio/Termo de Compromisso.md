@@ -1,13 +1,10 @@
-# Termo de Compromisso — versão 0.3
+# Termo de Compromisso — versão 0.4
 
 ## Definição
 
-Representa a formalização específica do vínculo de estágio entre as partes envolvidas.
+Representa a formalização do vínculo entre discente, concedente e instituição de ensino.
 
-No estágio externo, o termo formaliza o vínculo entre:
-- aluno;
-- concedente;
-- instituição de ensino.
+A Resolução 921/2025 determina que o Termo seja celebrado para cada nova oportunidade de estágio e proíbe assinatura retroativa.
 
 ## Atributos iniciais
 
@@ -16,6 +13,13 @@ No estágio externo, o termo formaliza o vínculo entre:
 - dataAceiteAluno
 - dataAceiteConcedente
 - dataAceiteInstituicao
+- remunerado
+- valorRemuneracao
+- valorAuxilioTransporte
+- horasSemanais
+- cargaHorariaTotalPrevista
+- dataInicio
+- dataFim
 - status
 
 ## Estados candidatos
@@ -25,41 +29,35 @@ No estágio externo, o termo formaliza o vínculo entre:
 - FORMALIZADO
 - CANCELADO
 
+## Condições financeiras
+
+O modelo de Termo usado pela FACSI possui cláusulas distintas para:
+- estágio remunerado, registrando remuneração, auxílio-transporte e apólice;
+- estágio não remunerado, registrando a responsabilidade pelo seguro.
+
+Na modelagem, modalidade e remuneração são conceitos diferentes.
+
+### Validação
+
+Se o Estágio for `NAO_OBRIGATORIO`, o Termo deve possuir contrapartida financeira válida.
+
 ## Relação com Estágio
 
 ```
 Estagio 1 -------- 0..1 TermoCompromisso
 ```
 
-Durante a formalização, o Estágio pode existir sem termo concluído.
+## Seguro
 
-Para ativação do vínculo, o termo deve estar formalizado quando exigido.
-
-## Responsabilidade
-
-O Termo não deve ser tratado apenas como arquivo PDF.
-
-O sistema deve representar o estado da formalização e os dados estruturados relevantes.
+O número da apólice deve constar no Termo, mas a Apólice continua sendo entidade própria do domínio.
 
 ## Aditivos
 
-A Lei nº 11.788/2008 prevê expressamente que o Plano de Atividades seja incorporado ao Termo por **aditivos** ao longo do acompanhamento do estágio.
-
-### Consequência
-
-A existência de aditivos deixa de ser hipótese e passa a ser requisito confirmado.
-
-Na v0.3 ainda não criamos a entidade `AditivoTermo`; ela fica como evolução natural para a próxima etapa de modelagem.
+Prorrogação exige novo Plano de Atividades validado e anexado a Termo Aditivo.
 
 ## Regras
 
-- um Termo principal pertence a um único Estágio;
-- o termo deve identificar as partes do vínculo;
-- deve ser celebrado antes do início efetivo;
-- mudanças no plano podem gerar aditivos;
-- o histórico dessas alterações não deve ser perdido.
-
-## Questões ainda abertas
-
-- Quais outros tipos de alteração, além do Plano de Atividades, a FACSI formaliza por aditivo?
-- Como representar assinatura/aceite institucional no sistema?
+- deve existir antes do início;
+- não admite assinatura retroativa;
+- formaliza condições pactuadas;
+- deve preservar histórico de aditivos e alterações relevantes.
