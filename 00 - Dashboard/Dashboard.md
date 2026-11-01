@@ -29,8 +29,9 @@ Iniciar a Sprint 05 de refinamento do modelo e UML final.
 - [x] nenhum código de produção alterado
 - [x] commit e push
 
-### Sprint 05 — Próximo bloco
-- [ ] comparar UML com código atual
+### Sprint 05 — Refinamento e UML final
+**Status:** 🟡 Em andamento
+- [x] comparar UML com código atual
 - [ ] atualizar Profissional
 - [ ] adicionar AmbitoEstagio
 - [ ] adicionar Frequência
@@ -46,7 +47,7 @@ Iniciar a Sprint 05 de refinamento do modelo e UML final.
 - Sprint 02 — Acompanhamento e encerramento: ✅
 - Sprint 03 — Regras de negócio: ✅
 - Sprint 04 — Testes automatizados: ✅
-- Sprint 05 — UML final e refinamento: ⬜
+- Sprint 05 — UML final e refinamento: 🟡
 - Sprint 06 — Entrega e apresentação: ⬜
 
 Ver: [[Roadmap e Checklist Mestre — Estágio FACSI]]
