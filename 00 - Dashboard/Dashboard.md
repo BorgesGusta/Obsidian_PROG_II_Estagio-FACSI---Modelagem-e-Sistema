@@ -2,66 +2,43 @@
 
 ## Objetivo atual
 
-Validar a **modelagem de domínio pré-final** com o professor Hugo antes de iniciar implementação relevante em Java.
-
-## Sprint atual
-
-[[Sprint 01 - Dominio Central]]
+Finalizar a validação da modelagem com base na documentação real da FACSI/Unifesspa e levar ao professor Hugo apenas os pontos operacionais que ainda não estão documentados.
 
 ## Estado atual
 
 ### Fechado
-- [x] Pessoa, Aluno e Professor
-- [x] Supervisor como papel de Pessoa
-- [x] Orientador como Professor
-- [x] Concedente e Convênio
-- [x] Vaga
-- [x] Candidatura
-- [x] Estágio como entidade central
-- [x] Estágio sem candidatura/vaga obrigatória
-- [x] Termo de Compromisso
-- [x] Plano de Atividades
-- [x] Apólice de Seguro
-- [x] Auditoria estrutural da UML
-- [x] Revisão normativa das principais regras
-- [x] Resumo para validação
-- [x] Perguntas objetivas para o professor
-- [x] UML pré-validação organizada
+- [x] Núcleo do domínio
+- [x] Regulamento FACSI 2022
+- [x] Resolução CONSEPE 921/2025
+- [x] Termo de Compromisso real
+- [x] Plano de Atividades real
+- [x] Registro de Frequência
+- [x] Relatório Final
+- [x] Apólice institucional
+- [x] Regra de múltiplos estágios
+- [x] Remuneração x modalidade
+- [x] Seguro por modalidade
+- [x] Prorrogação e Termo Aditivo
+- [x] UML pré-validação revisada
 
-### Agora
-- [ ] Apresentar modelo ao professor Hugo
-- [ ] Validar pendências institucionais
-- [ ] Registrar respostas do professor
-- [ ] Aplicar correções finais
+### Ainda aberto
+- [ ] Como cadastrar várias oportunidades idênticas de uma concedente
+- [ ] Em que momento o Supervisor precisa ser definido
+- [ ] Como o Professor Orientador é escolhido
+- [ ] Quais pendências bloqueiam novo estágio/encerramento
+- [ ] Como a FACSI trata troca de Supervisor/Orientador
+- [ ] Quais outras alterações geram Termo Aditivo
 
 ### Depois
-- [ ] Gerar UML final da Sprint 01
+- [ ] Validar com professor Hugo
+- [ ] UML final
 - [ ] Encerrar Sprint 01
-- [ ] Revisão guiada de OO
-- [ ] Bateria de exercícios
-- [ ] Converter modelo validado em classes Java
-- [ ] Implementar regras centrais em Java
+- [ ] Revisão de OO
+- [ ] Exercícios
+- [ ] Implementação Java
 
-## Pendências importantes
+## Observação normativa
 
-- Quantidade de posições por Vaga.
-- Supervisor previsto na Vaga versus Supervisor efetivo.
-- Troca de Supervisor/Orientador.
-- Soma de carga horária em múltiplos estágios.
-- Forma de escolha do Orientador.
-- Fluxo de aditivos.
-- Restrições adicionais do Convênio.
-- Pendências de abertura/encerramento.
+A Resolução CONSEPE nº 921/2025 é a base geral vigente e revogou a Resolução nº 016/2014.
 
-## Links rápidos
-
-- [[Resumo para Validacao com Professor]]
-- [[Perguntas Objetivas para o Professor]]
-- [[Estado da Modelagem - pre-validacao]]
-- [[Checklist de Prontidao Sprint 01]]
-- [[Regras de Negocio]]
-- [[Relacionamentos]]
-- [[Estagio]]
-- [[Termo de Compromisso]]
-- [[Plano de Atividades]]
-- [[Apolice de Seguro]]
+O Regulamento FACSI 01/2022 permanece como referência específica do curso quando não conflita com a norma geral vigente.
