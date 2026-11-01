@@ -2,7 +2,7 @@
 
 ## Objetivo atual
 
-Fechar a **modelagem v0.2 do domínio central** e deixá-la pronta para revisão com o professor Hugo antes de iniciar implementação relevante em Java.
+Validar a **modelagem de domínio pré-final** com o professor Hugo antes de iniciar implementação relevante em Java.
 
 ## Sprint atual
 
@@ -12,7 +12,8 @@ Fechar a **modelagem v0.2 do domínio central** e deixá-la pronta para revisão
 
 ### Fechado
 - [x] Pessoa, Aluno e Professor
-- [x] Supervisor e Orientador como papéis
+- [x] Supervisor como papel de Pessoa
+- [x] Orientador como Professor
 - [x] Concedente e Convênio
 - [x] Vaga
 - [x] Candidatura
@@ -21,16 +22,22 @@ Fechar a **modelagem v0.2 do domínio central** e deixá-la pronta para revisão
 - [x] Termo de Compromisso
 - [x] Plano de Atividades
 - [x] Apólice de Seguro
-- [x] UML v0.2 criada
+- [x] Auditoria estrutural da UML
+- [x] Revisão normativa das principais regras
+- [x] Resumo para validação
+- [x] Perguntas objetivas para o professor
+- [x] UML pré-validação organizada
 
 ### Agora
-- [ ] Revisar cardinalidades da UML v0.2
-- [ ] Revisar possíveis duplicações de atributos
-- [ ] Consolidar dúvidas restantes para o professor
-- [ ] Preparar resumo da modelagem
+- [ ] Apresentar modelo ao professor Hugo
+- [ ] Validar pendências institucionais
+- [ ] Registrar respostas do professor
+- [ ] Aplicar correções finais
 
 ### Depois
-- [ ] Revisão de OO com exemplos do projeto
+- [ ] Gerar UML final da Sprint 01
+- [ ] Encerrar Sprint 01
+- [ ] Revisão guiada de OO
 - [ ] Bateria de exercícios
 - [ ] Converter modelo validado em classes Java
 - [ ] Implementar regras centrais em Java
@@ -38,22 +45,23 @@ Fechar a **modelagem v0.2 do domínio central** e deixá-la pronta para revisão
 ## Pendências importantes
 
 - Quantidade de posições por Vaga.
-- Supervisor informado na Vaga versus Supervisor efetivo do Estágio.
-- Soma de carga horária em múltiplos estágios simultâneos.
-- Versionamento de Plano de Atividades e aditivos do Termo.
-- Forma de registrar origem em extensão/pesquisa.
-- Troca de Supervisor/Orientador durante o estágio.
+- Supervisor previsto na Vaga versus Supervisor efetivo.
+- Troca de Supervisor/Orientador.
+- Soma de carga horária em múltiplos estágios.
+- Forma de escolha do Orientador.
+- Fluxo de aditivos.
+- Restrições adicionais do Convênio.
+- Pendências de abertura/encerramento.
 
 ## Links rápidos
 
-- [[Contexto do Projeto]]
-- [[Glossario]]
+- [[Resumo para Validacao com Professor]]
+- [[Perguntas Objetivas para o Professor]]
+- [[Estado da Modelagem - pre-validacao]]
+- [[Checklist de Prontidao Sprint 01]]
 - [[Regras de Negocio]]
 - [[Relacionamentos]]
 - [[Estagio]]
 - [[Termo de Compromisso]]
 - [[Plano de Atividades]]
 - [[Apolice de Seguro]]
-- [[Registro de Decisoes]]
-- [[Duvidas para o Professor]]
-- [[Sprint 01 - Dominio Central]]
