@@ -2,40 +2,62 @@
 
 ## Objetivo atual
 
-Finalizar a validação da modelagem com base na documentação real da FACSI/Unifesspa e levar ao professor Hugo apenas os pontos operacionais que ainda não estão documentados.
+Concluir a Sprint 02 e iniciar as regras de negócio da Sprint 03, mantendo a implementação Java alinhada à modelagem e aos documentos reais da FACSI/Unifesspa.
 
 ## Estado atual
 
-### Fechado
-- [x] Núcleo do domínio
+### Sprint 01 — Domínio central
+- [x] Modelagem central
 - [x] Regulamento FACSI 2022
 - [x] Resolução CONSEPE 921/2025
-- [x] Termo de Compromisso real
-- [x] Plano de Atividades real
+- [x] Documentos reais analisados
+- [x] UML candidata a final
+- [x] Estrutura Java inicial
+- [x] Pessoa / Aluno / Professor / Profissional
+- [x] Concedente / Convênio
+- [x] Vaga / Candidatura
+- [x] Estágio
+- [x] Termo / Plano / Seguro
+- [x] Commit e push da estrutura inicial
+
+**Pendência acadêmica:** validação final com o professor Hugo.
+
+### Sprint 02 — Acompanhamento e encerramento
+
+#### Parte 1
 - [x] Registro de Frequência
+- [x] Soma de horas realizadas
+- [x] Cenário no Main
+- [x] Commit e push
+
+#### Parte 2
 - [x] Relatório Final
-- [x] Apólice institucional
-- [x] Regra de múltiplos estágios
-- [x] Remuneração x modalidade
-- [x] Seguro por modalidade
-- [x] Prorrogação e Termo Aditivo
-- [x] UML pré-validação revisada
+- [x] Avaliação do Estágio
+- [x] Relações com Estágio
+- [x] Main ajustado para Estágio ATIVO
+- [x] Build e execução
+- [ ] Commit
+- [ ] Push
 
-### Ainda aberto
-- [ ] Como cadastrar várias oportunidades idênticas de uma concedente
-- [ ] Em que momento o Supervisor precisa ser definido
-- [ ] Como o Professor Orientador é escolhido
-- [ ] Quais pendências bloqueiam novo estágio/encerramento
-- [ ] Como a FACSI trata troca de Supervisor/Orientador
-- [ ] Quais outras alterações geram Termo Aditivo
+### Próximo bloco — Sprint 03
+- [ ] Limite de 6h/dia
+- [ ] Limite de 30h/semana
+- [ ] Estágios simultâneos
+- [ ] Formalização obrigatória
+- [ ] Seguro / Plano / Termo
+- [ ] Contrapartida do estágio não obrigatório
+- [ ] Encerramento e transições de status
 
-### Depois
-- [ ] Validar com professor Hugo
-- [ ] UML final
-- [ ] Encerrar Sprint 01
-- [ ] Revisão de OO
-- [ ] Exercícios
-- [ ] Implementação Java
+## Linha do tempo
+
+- Sprint 01 — Domínio central: ✅
+- Sprint 02 — Acompanhamento e encerramento: 🟡
+- Sprint 03 — Regras de negócio: ⬜
+- Sprint 04 — Testes automatizados: ⬜
+- Sprint 05 — UML final e refinamento: ⬜
+- Sprint 06 — Entrega e apresentação: ⬜
+
+Ver: [[Roadmap e Checklist Mestre — Estágio FACSI]]
 
 ## Observação normativa
 
