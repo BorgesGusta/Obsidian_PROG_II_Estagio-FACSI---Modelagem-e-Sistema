@@ -39,7 +39,7 @@ Classificar as diferenças entre a UML candidata, o código Java atual, as regra
 
 ## 3. AJUSTAR JAVA ANTES DA UML FINAL
 
-### AJ-01 — Período obrigatório para iniciar
+### AJ-01 — Período obrigatório para iniciar ✅
 
 Hoje um estágio pode iniciar com dataInicio ou dataFimPrevista nulas.
 
@@ -51,7 +51,7 @@ Decisão:
 Motivo:
 o período de vigência é informação obrigatória do Plano e é necessário para validar Convênio, Seguro e simultaneidade.
 
-### AJ-02 — Vigência do Convênio
+### AJ-02 — Vigência do Convênio ✅
 
 Hoje estágio EXTERNO exige um objeto Convenio, mas não verifica se o convênio está vigente no início.
 
@@ -60,7 +60,7 @@ Decisão:
 - para estágio EXTERNO, o convênio deve cobrir a dataInicio;
 - não inventar regra adicional sobre renovação no meio do estágio sem base operacional.
 
-### AJ-03 — Cobertura do Seguro
+### AJ-03 — Cobertura do Seguro ✅
 
 Hoje basta existir uma ApoliceSeguro.
 
@@ -68,7 +68,7 @@ Decisão:
 - exigir pelo menos uma apólice que cubra a dataInicio do estágio;
 - uma apólice sem datas não comprova cobertura para a regra de início.
 
-### AJ-04 — Coerência de dataFimReal
+### AJ-04 — Coerência de dataFimReal ✅
 
 Hoje encerrar(dataFimReal) aceita qualquer data não nula.
 
@@ -116,10 +116,8 @@ A norma confirma novo Plano na prorrogação, mas outras alterações que geram 
 
 ## Prioridade
 
-Antes da UML final:
-1. AJ-01 período;
-2. AJ-02 convênio vigente;
-3. AJ-03 seguro vigente;
-4. AJ-04 dataFimReal coerente;
-5. executar todos os testes;
-6. atualizar UML.
+Refinamentos concluídos. Próximos passos:
+1. versionar as alterações Java;
+2. atualizar UML;
+3. revisar cardinalidades;
+4. gerar diagrama final.
