@@ -2,13 +2,30 @@
 
 ## Status
 
-Adotada na versão 0.2.
+Adotada na versão 0.2 e respaldada pela Resolução CONSEPE nº 016/2014 da Unifesspa.
 
 ## Contexto
 
-Uma concedente não deixa de existir quando seu convênio termina.
+A norma institucional trata a concedente e o convênio como conceitos distintos.
 
-Além disso, uma mesma concedente pode possuir diferentes períodos de vigência e pode existir uma lacuna entre o fim de um convênio e o início de outro.
+A concedente é a organização, instituição, unidade ou profissional que recebe o estagiário. Para entidades externas, a Unifesspa firma um convênio que estabelece as condições de realização do estágio.
+
+O convênio possui prazo próprio de vigência e pode ser renovado.
+
+## Base normativa
+
+O art. 14 da Resolução CONSEPE nº 016/2014 determina convênio para entidades externas concedentes.
+
+O instrumento deve informar, entre outros pontos:
+
+- cursos contemplados;
+- carga horária;
+- supervisor da área;
+- condições de supervisão;
+- seguro;
+- prazo de vigência entre **1 e 5 anos**.
+
+A Resolução também prevê que a PROEG mantenha atualizado o cadastro de convênios e oriente sobre suas renovações.
 
 ## Problema da alternativa simples
 
@@ -19,13 +36,13 @@ Concedente
 - dataFim
 ```
 
-Essa estrutura não representa corretamente o histórico.
+Essa estrutura não representa corretamente o histórico institucional.
 
-Se o convênio for renovado, seria necessário sobrescrever as datas anteriores ou criar campos adicionais.
+Em uma renovação, datas anteriores seriam sobrescritas ou seria necessário criar campos improvisados.
 
 ## Decisão
 
-Separar os conceitos:
+Separar:
 
 ```
 Concedente
@@ -40,29 +57,24 @@ Convenio
 ## Consequências positivas
 
 - preserva histórico;
+- representa renovações;
 - permite identificar lacunas entre vigências;
-- facilita consulta de concedentes aptas;
-- permite registrar renovação sem sobrescrever dados anteriores;
-- reduz dependência de controles manuais.
+- facilita validar se o convênio é válido para o curso;
+- permite consultar concedentes aptas em determinado período;
+- reflete diretamente a estrutura prevista na norma institucional.
 
 ## Consequências a observar
 
-- será necessário validar se podem existir períodos sobrepostos;
-- será necessário definir como tratar cancelamento antecipado;
-- será necessário confirmar se o convênio possui restrições por curso, campus ou modalidade.
+- verificar se podem existir convênios vigentes sobrepostos para uma mesma concedente;
+- definir tratamento de cancelamento antecipado;
+- confirmar eventuais restrições por campus, unidade acadêmica ou modalidade.
 
 ## Relação com Orientação a Objetos
 
-Este caso é um exemplo de **associação entre classes**.
-
-Não existe relação de herança:
+É uma **associação entre classes**.
 
 ```
 Convenio NÃO É uma Concedente.
 ```
 
-Existe uma relação de pertencimento:
-
-```
-Uma Concedente POSSUI Convênios.
-```
+Uma concedente **possui** convênios ao longo do tempo.
