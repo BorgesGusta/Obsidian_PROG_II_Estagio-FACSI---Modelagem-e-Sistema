@@ -61,14 +61,14 @@ Cada diferença será marcada como:
 
 
 ### Ajustar UML
-- [ ] adicionar Profissional como subclasse de Pessoa
-- [ ] adicionar AmbitoEstagio
-- [ ] adicionar RegistroFrequencia
-- [ ] adicionar RelatorioFinal
-- [ ] adicionar AvaliacaoEstagio
-- [ ] atualizar Estagio com ambito
-- [ ] representar iniciar() e encerrar() se o diagrama final mostrar comportamento
-- [ ] decidir como representar ValidadorCargaHoraria e ValidadorEstagio
+- [x] adicionar Profissional como subclasse de Pessoa
+- [x] adicionar AmbitoEstagio
+- [x] adicionar RegistroFrequencia
+- [x] adicionar RelatorioFinal
+- [x] adicionar AvaliacaoEstagio
+- [x] atualizar Estagio com ambito
+- [x] representar iniciar() e encerrar() se o diagrama final mostrar comportamento
+- [x] decidir como representar ValidadorCargaHoraria e ValidadorEstagio
 
 ### Avaliar antes de alterar Java
 - [x] dataFimReal aceita qualquer data não nula — AJUSTAR JAVA
@@ -87,13 +87,13 @@ Cada diferença será marcada como:
 
 ## Etapa 5 — UML final
 
-- [ ] definir escopo do diagrama final
-- [ ] atualizar entidades, atributos e enums
-- [ ] revisar cardinalidades
-- [ ] revisar herança e papéis
-- [ ] revisar dependências das classes de regras
-- [ ] gerar PlantUML final
-- [ ] validar consistência com o código
+- [x] definir escopo do diagrama final
+- [x] atualizar entidades, atributos e enums
+- [x] revisar cardinalidades
+- [x] revisar herança e papéis
+- [x] revisar dependências das classes de regras
+- [x] gerar PlantUML final
+- [x] validar consistência com o código
 - [ ] gerar imagem final
 
 ## Definição de pronto
@@ -104,4 +104,4 @@ A Sprint 05 termina quando:
 - as decisões de refinamento estiverem registradas;
 - as dúvidas que dependem do professor estiverem separadas;
 - a UML final estiver gerada e revisada;
-- os 32 testes continuarem passando após qualquer refinamento de código.
+- os 48 testes continuarem passando após qualquer refinamento de código.
