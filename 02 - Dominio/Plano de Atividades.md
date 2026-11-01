@@ -1,21 +1,34 @@
-# Plano de Atividades — versão 0.3
+# Plano de Atividades — versão 0.4
 
 ## Definição
 
-Representa o planejamento das atividades que o aluno realizará durante o estágio.
+Representa o planejamento acadêmico-profissional das atividades do Estágio.
 
-É a peça que conecta o vínculo profissional à formação acadêmica.
-
-## Atributos iniciais
+## Atributos próprios
 
 - id
-- objetivo
-- descricaoAtividades
+- areaAtuacao
 - justificativa
+- objetivoGeral
+- objetivosEspecificos
+- descricaoAtividades
 - adequacaoPedagogica
+- cronograma
 - status
 
-## Estados candidatos
+## Dados obrigatórios do Plano
+
+A Resolução 921/2025 exige:
+- dados do discente;
+- dados da concedente;
+- período de vigência;
+- carga horária semanal;
+- carga horária total;
+- cronograma detalhado.
+
+Na modelagem OO, dados de Aluno, Concedente, período e carga podem ser obtidos pelas relações com o Estágio, evitando duplicação desnecessária.
+
+## Fluxo
 
 - RASCUNHO
 - EM_ANALISE
@@ -23,39 +36,25 @@ Representa o planejamento das atividades que o aluno realizará durante o estág
 - REJEITADO
 - SUBSTITUIDO
 
-## Relação com Estágio
-
-```
-Estagio 1 -------- 0..1 PlanoAtividades
-```
-
-Na formalização, o plano pode ainda estar sendo elaborado.
-
-Para o estágio prosseguir, deve existir Plano de Atividades compatível com a formação do aluno.
-
 ## Participantes
 
-O plano envolve, no mínimo:
-- aluno;
-- supervisor;
-- orientador.
+O Plano é acompanhado/validado pelos responsáveis acadêmicos e pelo Supervisor da concedente conforme o tipo de estágio.
 
-## Evolução do plano
+## Prorrogação e versão
 
-A Lei nº 11.788/2008 determina que o Plano de Atividades seja incorporado ao Termo de Compromisso por meio de **aditivos**, à medida que o desempenho do estudante é avaliado progressivamente.
+Quando o período do estágio for prorrogado:
+1. deve ser criado novo Plano;
+2. o docente orientador deve validá-lo;
+3. o novo Plano deve ser anexado ao Termo Aditivo.
 
-### Consequência de modelagem
+Isso confirma a necessidade de preservar histórico de Planos.
 
-O plano pode mudar ao longo do estágio e o sistema deve preservar histórico dessas alterações.
+## Relação
 
-Na v0.3, mantemos `PlanoAtividades` como entidade principal e registramos como requisito futuro o versionamento/aditivos, sem ainda criar uma classe extra.
+```
+Estagio 1 -------- 0..* PlanoAtividades
+```
 
-## Responsabilidade
+### Revisão de cardinalidade
 
-O Plano não deve ser apenas um anexo.
-
-O sistema deve conseguir representar suas atividades, situação de aprovação e evolução ao longo do vínculo.
-
-## Questão ainda aberta
-
-- Quem aprova formalmente cada alteração no fluxo da FACSI?
+A versão anterior usava `0..1`. A norma vigente confirma que uma prorrogação pode gerar um novo Plano, portanto um Estágio pode possuir vários Planos ao longo do tempo, ainda que apenas um esteja vigente em determinado período.
