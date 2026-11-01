@@ -135,12 +135,13 @@ Vaga "1" -- "0..*" Candidatura
 Candidatura "0..1" -- "0..1" Estagio : origem opcional >
 Aluno "1" -- "0..*" Estagio
 Vaga "0..1" -- "0..*" Estagio : origem opcional >
+Convenio "0..1" -- "0..*" Estagio : fundamenta >
 
 Estagio "0..*" --> "1" Pessoa : supervisor
-Estagio "0..*" --> "1" Pessoa : orientador
+Estagio "0..*" --> "1" Professor : orientador
 
 Estagio "1" -- "0..1" TermoCompromisso
 Estagio "1" -- "0..1" PlanoAtividades
-ApoliceSeguro "1" -- "0..*" Estagio
+Estagio "0..*" -- "0..*" ApoliceSeguro : cobertura >
 
 @enduml
