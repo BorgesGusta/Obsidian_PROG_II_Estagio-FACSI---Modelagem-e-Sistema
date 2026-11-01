@@ -2,7 +2,7 @@
 
 ## Objetivo atual
 
-Concluir a Sprint 03 com regras de formalização e encerramento.
+Iniciar a Sprint 04 e transformar as regras implementadas nas Sprints anteriores em testes automatizados.
 
 ## Estado atual
 
@@ -13,36 +13,44 @@ Concluir a Sprint 03 com regras de formalização e encerramento.
 **Status:** ✅ Concluída
 
 ### Sprint 03 — Regras de negócio
-**Status:** 🟡 Em andamento
+**Status:** ✅ Concluída
 
-#### Parte 1 — Carga horária e simultaneidade
-- [x] Limite de 6h/dia
-- [x] Limite de 30h/semana
-- [x] Soma de registros do mesmo dia
-- [x] Estágios simultâneos
-- [x] Sobreposição real de períodos
-- [x] Dois estágios não obrigatórios
+#### Carga horária e simultaneidade
+- [x] 6h/dia
+- [x] 30h/semana
+- [x] sobreposição de períodos
+- [x] estágios simultâneos
+- [x] dois não obrigatórios
 - [x] ValidadorCargaHoraria
-- [x] Cenários válidos e inválidos
+
+#### Formalização e encerramento
+- [x] Termo
+- [x] Plano
+- [x] Seguro
+- [x] AmbitoEstagio
+- [x] Convênio para externo
+- [x] Contrapartida financeira
+- [x] podeIniciar()
+- [x] podeEncerrar()
+- [x] 170h para obrigatório
+- [x] dataFimReal
+- [x] ValidadorEstagio
 - [x] Commit e push
 
-#### Parte 2 — Formalização e encerramento
-- [ ] Termo obrigatório
-- [ ] Plano de Atividades
-- [ ] Seguro
-- [ ] Convênio quando aplicável
-- [ ] Contrapartida do não obrigatório
-- [ ] podeIniciar()
-- [ ] podeEncerrar()
-- [ ] Transições de status
-- [ ] Cenários no Main
-- [ ] Commit e push
+### Sprint 04 — Próximo bloco
+- [ ] configurar JUnit
+- [ ] testes de carga horária
+- [ ] testes de simultaneidade
+- [ ] testes de formalização
+- [ ] testes de encerramento
+- [ ] mvn test
+- [ ] commit e push
 
 ## Linha do tempo
 
 - Sprint 01 — Domínio central: ✅
 - Sprint 02 — Acompanhamento e encerramento: ✅
-- Sprint 03 — Regras de negócio: 🟡
+- Sprint 03 — Regras de negócio: ✅
 - Sprint 04 — Testes automatizados: ⬜
 - Sprint 05 — UML final e refinamento: ⬜
 - Sprint 06 — Entrega e apresentação: ⬜
