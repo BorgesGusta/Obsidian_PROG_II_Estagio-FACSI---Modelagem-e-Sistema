@@ -64,6 +64,18 @@ Um aluno pode possuir mais de um vínculo simultâneo desde que sejam respeitado
 
 A duração do estágio na mesma parte concedente não pode exceder 2 anos, salvo a exceção legal aplicável à pessoa com deficiência.
 
+### RN-016 — Candidatura como processo seletivo
+
+Toda candidatura pertence a um aluno e uma vaga e não representa, por si só, vínculo de estágio.
+
+### RN-017 — Seleção
+
+Somente uma candidatura selecionada pode originar estágio no fluxo padrão.
+
+### RN-018 — Seleção não ativa estágio
+
+A seleção do candidato inicia a possibilidade de formalização, mas não torna o estágio automaticamente ativo.
+
 ## Regras que precisam de validação
 
 ### RV-001 — Soma da carga horária simultânea
@@ -81,3 +93,7 @@ Confirmar se uma Vaga pode representar várias posições ou se cada registro re
 ### RV-004 — Supervisor na vaga
 
 Confirmar se o supervisor informado na Vaga fica obrigatoriamente associado ao Estágio ou pode ser substituído na formalização.
+
+### RV-005 — Estágio sem candidatura
+
+Confirmar se pode existir estágio formalizado sem Candidatura registrada, como no caso em que o aluno encontra diretamente a oportunidade.
