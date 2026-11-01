@@ -2,7 +2,7 @@
 
 ## Objetivo atual
 
-Versionar os 32 testes automatizados da Sprint 04 e iniciar a Sprint 05 de refinamento do modelo e UML final.
+Iniciar a Sprint 05 de refinamento do modelo e UML final.
 
 ## Estado atual
 
@@ -16,7 +16,7 @@ Versionar os 32 testes automatizados da Sprint 04 e iniciar a Sprint 05 de refin
 **Status:** ✅ Concluída
 
 ### Sprint 04 — Testes automatizados
-**Status:** 🟡 Concluída localmente, aguardando commit
+**Status:** ✅ Concluída
 
 - [x] JUnit 5
 - [x] 15 testes de carga horária e simultaneidade
@@ -27,7 +27,7 @@ Versionar os 32 testes automatizados da Sprint 04 e iniciar a Sprint 05 de refin
 - [x] mvn test — BUILD SUCCESS
 - [x] mvn compile — BUILD SUCCESS
 - [x] nenhum código de produção alterado
-- [ ] commit e push
+- [x] commit e push
 
 ### Sprint 05 — Próximo bloco
 - [ ] comparar UML com código atual
@@ -45,7 +45,7 @@ Versionar os 32 testes automatizados da Sprint 04 e iniciar a Sprint 05 de refin
 - Sprint 01 — Domínio central: ✅
 - Sprint 02 — Acompanhamento e encerramento: ✅
 - Sprint 03 — Regras de negócio: ✅
-- Sprint 04 — Testes automatizados: 🟡
+- Sprint 04 — Testes automatizados: ✅
 - Sprint 05 — UML final e refinamento: ⬜
 - Sprint 06 — Entrega e apresentação: ⬜
 
