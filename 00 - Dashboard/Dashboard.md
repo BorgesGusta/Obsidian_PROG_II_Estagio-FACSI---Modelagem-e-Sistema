@@ -2,7 +2,7 @@
 
 ## Objetivo atual
 
-Concluir a Sprint 04 com testes automatizados das regras de carga horária, formalização e encerramento.
+Versionar os 32 testes automatizados da Sprint 04 e iniciar a Sprint 05 de refinamento do modelo e UML final.
 
 ## Estado atual
 
@@ -16,32 +16,29 @@ Concluir a Sprint 04 com testes automatizados das regras de carga horária, form
 **Status:** ✅ Concluída
 
 ### Sprint 04 — Testes automatizados
-**Status:** 🟡 Em andamento
+**Status:** 🟡 Concluída localmente, aguardando commit
 
-#### Parte 1 — Carga horária e simultaneidade
-- [x] JUnit 5 configurado
-- [x] 15 testes criados
-- [x] cálculo de horas
-- [x] limites diário e semanal
-- [x] sobreposição de períodos
-- [x] simultaneidade
-- [x] dois/três não obrigatórios
-- [x] mvn test
-- [x] mvn compile
+- [x] JUnit 5
+- [x] 15 testes de carga horária e simultaneidade
+- [x] 17 testes de formalização e encerramento
+- [x] 32 testes passando
+- [x] 0 falhas
+- [x] 0 erros
+- [x] mvn test — BUILD SUCCESS
+- [x] mvn compile — BUILD SUCCESS
+- [x] nenhum código de produção alterado
 - [ ] commit e push
 
-#### Parte 2 — Formalização e encerramento
-- [ ] início sem documentos
-- [ ] externo sem convênio
-- [ ] interno sem convênio
-- [ ] sem âmbito
-- [ ] não obrigatório sem bolsa
-- [ ] não obrigatório sem auxílio
-- [ ] encerramento < 170h
-- [ ] encerramento válido
-- [ ] dataFimReal
-- [ ] mvn test
-- [ ] commit e push
+### Sprint 05 — Próximo bloco
+- [ ] comparar UML com código atual
+- [ ] atualizar Profissional
+- [ ] adicionar AmbitoEstagio
+- [ ] adicionar Frequência
+- [ ] adicionar Relatório e Avaliação
+- [ ] revisar validadores
+- [ ] revisar enums e cardinalidades
+- [ ] tratar pendências técnicas prioritárias
+- [ ] gerar UML final
 
 ## Linha do tempo
 
