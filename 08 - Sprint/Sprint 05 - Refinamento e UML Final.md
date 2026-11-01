@@ -23,17 +23,20 @@ Comparar a modelagem candidata da Sprint 01 com o código Java consolidado nas S
 
 ## Etapa 2 — Auditoria de comportamento
 
-- [ ] Revisar iniciar()
-- [ ] Revisar encerrar(LocalDate)
-- [ ] Revisar regras de 6h/dia e 30h/semana
-- [ ] Revisar simultaneidade e sobreposição
-- [ ] Revisar regra de dois não obrigatórios
-- [ ] Revisar formalização por Termo, Plano, Seguro e Convênio
-- [ ] Revisar carga mínima de 170h
-- [ ] Revisar remuneração do não obrigatório
-- [ ] Revisar coerência de dataFimReal
+- [x] Revisar iniciar()
+- [x] Revisar encerrar(LocalDate)
+- [x] Revisar regras de 6h/dia e 30h/semana
+- [x] Revisar simultaneidade e sobreposição
+- [x] Revisar regra de dois não obrigatórios
+- [x] Revisar formalização por Termo, Plano, Seguro e Convênio
+- [x] Revisar carga mínima de 170h
+- [x] Revisar remuneração do não obrigatório
+- [x] Revisar coerência de dataFimReal
 
 ## Etapa 3 — Classificação das diferenças
+
+**Status:** ✅ Concluída
+
 
 Cada diferença será marcada como:
 
@@ -56,12 +59,12 @@ Cada diferença será marcada como:
 - [ ] decidir como representar ValidadorCargaHoraria e ValidadorEstagio
 
 ### Avaliar antes de alterar Java
-- [ ] dataFimReal aceita qualquer data não nula
-- [ ] resultado da avaliação ainda é String
-- [ ] estados textuais de Convenio, Vaga, Candidatura, Termo e Plano
-- [ ] setters permitem alterar dados estruturais após o estágio iniciar
-- [ ] validade de Convênio/Seguro é modelada por datas, mas o início atualmente verifica apenas existência
-- [ ] consistência entre remunerado e valorRemuneracao
+- [x] dataFimReal aceita qualquer data não nula — AJUSTAR JAVA
+- [x] resultado da avaliação ainda é String — VALIDAR COM PROFESSOR
+- [x] estados textuais de Convenio, Vaga, Candidatura, Termo e Plano — MELHORIA FUTURA
+- [x] setters permitem alterar dados estruturais após o estágio iniciar — MELHORIA FUTURA
+- [x] validade de Convênio/Seguro é modelada por datas, mas o início atualmente verifica apenas existência — AJUSTAR JAVA
+- [x] consistência entre remunerado e valorRemuneracao — MELHORIA FUTURA
 
 ### Validar com professor
 - [ ] semana de transição entre estágios não sobrepostos
