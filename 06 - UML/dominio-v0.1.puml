@@ -1,0 +1,115 @@
+@startuml
+skinparam classAttributeIconSize 0
+
+abstract class Pessoa {
+  - id
+  - nome
+  - cpf
+  - email
+  - telefone
+}
+
+class Aluno {
+  - matricula
+  - curso
+  - situacaoAcademica
+}
+
+class Professor {
+  - siape
+  - unidadeAcademica
+}
+
+class Concedente {
+  - id
+  - nome
+  - tipo
+  - documento
+  - email
+  - telefone
+}
+
+class Convenio {
+  - id
+  - dataInicio
+  - dataFim
+  - status
+}
+
+class Vaga {
+  - id
+  - titulo
+  - descricao
+  - modalidade
+  - cargaHorariaDiaria
+  - cargaHorariaSemanal
+  - valorBolsa
+  - valorAuxilioTransporte
+  - duracaoPrevista
+  - requisitos
+  - status
+}
+
+class Candidatura {
+  - id
+  - dataCandidatura
+  - status
+}
+
+class Estagio {
+  - id
+  - dataInicio
+  - dataFimPrevista
+  - dataFimReal
+  - cargaHorariaDiaria
+  - cargaHorariaSemanal
+  - status
+}
+
+class TermoCompromisso {
+  - id
+  - dataCriacao
+  - dataAceiteAluno
+  - dataAceiteConcedente
+  - dataAceiteInstituicao
+  - status
+}
+
+class PlanoAtividades {
+  - id
+  - justificativa
+  - objetivo
+  - descricaoAtividades
+  - adequacaoPedagogica
+  - status
+}
+
+class ApoliceSeguro {
+  - id
+  - numero
+  - dataInicio
+  - dataFim
+  - documentoReferencia
+}
+
+Pessoa <|-- Aluno
+Pessoa <|-- Professor
+
+Concedente "1" -- "0..*" Convenio
+Concedente "1" -- "0..*" Vaga
+
+Aluno "1" -- "0..*" Candidatura
+Vaga "1" -- "0..*" Candidatura
+
+Candidatura "1" -- "0..1" Estagio : origina >
+Aluno "1" -- "0..*" Estagio
+Vaga "1" -- "0..*" Estagio
+
+Estagio "0..*" --> "1" Pessoa : supervisor
+Estagio "0..*" --> "1" Pessoa : orientador
+
+Estagio "1" -- "0..1" TermoCompromisso
+Estagio "1" -- "0..1" PlanoAtividades
+ApoliceSeguro "1" -- "0..*" Estagio
+
+@enduml
