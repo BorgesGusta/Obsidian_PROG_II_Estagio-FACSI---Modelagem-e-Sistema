@@ -1,0 +1,79 @@
+@startuml
+title Estágio FACSI — Diagrama Técnico Complementar — Regras
+
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+hide empty members
+
+package "Modelo" {
+  class Aluno
+  class Estagio {
+    {static} + LIMITE_HORAS_DIARIAS : int = 6
+    {static} + LIMITE_HORAS_SEMANAIS : int = 30
+    + iniciar() : boolean
+    + encerrar(dataFimReal : LocalDate) : boolean
+    + calcularHorasRealizadas() : int
+    + calcularHorasNaData(data : LocalDate) : int
+    + calcularHorasNaSemana(dataReferencia : LocalDate) : int
+    + estaVigenteEm(data : LocalDate) : boolean
+    + possuiPeriodoSobreposto(outro : Estagio) : boolean
+  }
+
+  class TermoCompromisso
+  class Convenio {
+    + estaVigenteEm(data : LocalDate) : boolean
+  }
+  class ApoliceSeguro {
+    + estaVigenteEm(data : LocalDate) : boolean
+  }
+  class RegistroFrequencia
+}
+
+package "Regras" {
+  class ValidadorEstagio <<utility>> {
+    {static} + CARGA_HORARIA_MINIMA_OBRIGATORIO : int = 170
+    {static} + RESULTADO_APROVADO : String
+    {static} + podeIniciar(estagio : Estagio) : boolean
+    {static} + podeEncerrar(estagio : Estagio) : boolean
+    {static} + exigeConvenio(estagio : Estagio) : boolean
+    {static} + possuiContrapartidaFinanceira(termo : TermoCompromisso) : boolean
+  }
+
+  class ValidadorCargaHoraria <<utility>> {
+    {static} + LIMITE_ESTAGIOS_NAO_OBRIGATORIOS_SIMULTANEOS : int = 2
+    {static} + respeitaLimiteDiario(aluno : Aluno, estagios : List<Estagio>) : boolean
+    {static} + respeitaLimiteSemanal(aluno : Aluno, estagios : List<Estagio>) : boolean
+    {static} + respeitaLimiteEstagiosNaoObrigatorios(aluno : Aluno, estagios : List<Estagio>) : boolean
+    {static} + respeitaRegrasDeSimultaneidade(aluno : Aluno, estagios : List<Estagio>) : boolean
+  }
+}
+
+Estagio ..> ValidadorEstagio : usa para transição
+ValidadorEstagio ..> Estagio : valida
+ValidadorEstagio ..> TermoCompromisso : valida contrapartida
+ValidadorEstagio ..> Convenio : consulta vigência
+ValidadorEstagio ..> ApoliceSeguro : consulta cobertura
+
+ValidadorCargaHoraria ..> Aluno
+ValidadorCargaHoraria ..> Estagio
+ValidadorCargaHoraria ..> RegistroFrequencia : considera registros
+
+note right of ValidadorEstagio
+  Regras principais:
+  - período obrigatório e válido;
+  - convênio vigente para EXTERNO;
+  - seguro vigente no início;
+  - bolsa + auxílio no não obrigatório;
+  - 170h no obrigatório para encerrar;
+  - relatório, avaliação e frequência.
+end note
+
+note bottom of Estagio
+  O código atual possui dependência
+  Estagio -> ValidadorEstagio.
+  O validador também depende do modelo.
+  É aceitável nesta entrega e pode ser
+  desacoplado em evolução futura.
+end note
+
+@enduml
