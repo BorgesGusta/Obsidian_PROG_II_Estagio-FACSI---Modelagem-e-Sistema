@@ -2,15 +2,15 @@
 
 ## Objetivo
 
-Modelar a participação de um aluno em uma vaga sem confundir esse processo com a existência de um estágio.
+Modelar a participação de um aluno em uma vaga quando houver processo de seleção, sem tornar a candidatura obrigatória para todo estágio.
 
 ---
 
 ## 1. Definição
 
-Candidatura representa a relação entre um Aluno e uma Vaga durante o processo de seleção.
+Candidatura representa a relação entre um Aluno e uma Vaga durante um processo de seleção.
 
-Ela existe antes do vínculo de estágio.
+Ela pode existir antes do vínculo de estágio, mas **nem todo estágio precisa nascer de uma candidatura**.
 
 ```
 Aluno
@@ -26,14 +26,12 @@ Vaga
 
 ## 2. Por que Candidatura é uma entidade
 
-Não basta criar uma ligação direta entre Aluno e Vaga.
+A relação possui dados e estado próprios, como:
 
-A relação possui dados e estado próprios, por exemplo:
-
-- quando o aluno se candidatou;
-- situação atual da candidatura;
-- eventual data de decisão;
-- observação de seleção, quando necessário.
+- data da candidatura;
+- situação atual;
+- data de decisão;
+- observações da seleção.
 
 Por isso, Candidatura é tratada como entidade associativa.
 
@@ -72,8 +70,6 @@ SELECIONADA NAO_SELECIONADA
 pode originar Estágio
 ```
 
-CANCELADA pode ocorrer antes da decisão final.
-
 ---
 
 ## 5. Relacionamentos
@@ -84,65 +80,53 @@ CANCELADA pode ocorrer antes da decisão final.
 Aluno 1 -------- 0..* Candidatura
 ```
 
-Um aluno pode se candidatar a várias vagas ao longo do tempo.
-
-Cada candidatura pertence a exatamente um aluno.
-
 ### Vaga e Candidatura
 
 ```
 Vaga 1 -------- 0..* Candidatura
 ```
 
-Uma vaga pode receber várias candidaturas.
-
-Cada candidatura pertence a exatamente uma vaga.
+Cada candidatura pertence a exatamente um aluno e uma vaga.
 
 ---
 
 ## 6. Relação com Estágio
 
-### Regra proposta
-
 Uma candidatura selecionada pode originar, no máximo, um estágio.
 
+Mas um estágio pode existir sem candidatura.
+
 ```
-Candidatura 1 -------- 0..1 Estagio
+Candidatura 0..1 -------- 0..1 Estagio
 ```
 
-Nem toda candidatura gera estágio.
+### Casos sem candidatura
 
-Uma candidatura:
-- pode ser rejeitada;
-- pode ser cancelada;
-- pode ser selecionada e ainda assim não chegar à formalização.
+O regulamento da FACSI permite que o aluno encontre oportunidade por contato direto com a concedente ou por meio da coordenação de estágio.
+
+Também admite estágio realizado por meio de atividades em:
+
+- programas de extensão;
+- projetos de extensão;
+- programas/projetos de pesquisa;
+- Empresa Júnior vinculada à FACSI.
+
+Nesses casos, o vínculo pode ser formalizado sem existir uma candidatura prévia cadastrada no sistema.
 
 ---
 
 ## 7. Regra importante: seleção não é formalização
 
-Mesmo após a candidatura ser marcada como SELECIONADA, o estágio ainda não deve ser considerado ativo.
+Mesmo quando existe candidatura e ela é SELECIONADA, o estágio ainda não deve ser considerado ativo.
 
 Ainda podem faltar:
 
-- validação do convênio;
+- validação institucional;
 - Termo de Compromisso;
 - Plano de Atividades;
 - apólice de seguro;
-- definição/validação de supervisor e orientador;
-- outras verificações institucionais.
-
-Portanto:
-
-```
-Candidatura SELECIONADA
-        |
-        v
-Estágio EM_FORMALIZACAO
-        |
-        v
-Estágio ATIVO
-```
+- supervisor/orientador;
+- demais verificações aplicáveis.
 
 ---
 
@@ -166,7 +150,7 @@ Candidatura não representa vínculo de estágio.
 
 ### RN-CAND-005
 
-Somente candidatura selecionada pode, no fluxo padrão, originar um estágio.
+Quando o estágio nasce de processo seletivo registrado, somente candidatura selecionada pode originá-lo.
 
 ### RN-CAND-006
 
@@ -174,7 +158,7 @@ Uma candidatura selecionada pode originar no máximo um estágio.
 
 ### RN-CAND-007
 
-Selecionar o aluno não torna o estágio automaticamente ativo.
+Estágio pode existir sem candidatura.
 
 ---
 
@@ -182,16 +166,12 @@ Selecionar o aluno não torna o estágio automaticamente ativo.
 
 ### Q-CAND-001
 
-Pode existir estágio sem candidatura registrada no sistema, por exemplo quando o aluno encontra diretamente uma oportunidade?
+O sistema deve impedir o mesmo aluno de se candidatar duas vezes à mesma vaga?
 
 ### Q-CAND-002
 
-O sistema deve impedir o mesmo aluno de se candidatar duas vezes à mesma vaga?
-
-### Q-CAND-003
-
 Uma candidatura selecionada pode voltar para EM_ANALISE ou ser substituída por outro candidato?
 
-### Q-CAND-004
+### Q-CAND-003
 
 Devemos guardar o responsável pela decisão de seleção?
