@@ -1,31 +1,49 @@
-# Dúvidas para o Professor
+# Dúvidas para o Professor — versão reduzida após revisão normativa
 
 ## D-001 — Quantidade de posições
-Uma vaga pode disponibilizar várias posições ou cada registro corresponde exatamente a uma oportunidade?
 
-## D-002 — Supervisor
-O supervisor é definido na vaga, no vínculo de estágio ou nos dois momentos?
+Uma vaga cadastrada no sistema pode representar várias posições ou cada registro deve representar uma única oportunidade?
 
-## D-003 — Troca de supervisor
-É possível substituir o supervisor durante um estágio? Caso sim, deve haver histórico?
+> A legislação não obriga uma modelagem específica para isso. Para estágio de nível superior, o limite proporcional do art. 17 da Lei nº 11.788/2008 não se aplica.
+
+## D-002 — Supervisor na Vaga
+
+O supervisor informado na Vaga é apenas uma previsão ou deve ser o mesmo supervisor efetivo do Estágio?
+
+> A lei confirma que a concedente deve indicar supervisor com formação ou experiência compatível e que ele pode supervisionar até 10 estagiários simultaneamente. A norma não exige que isso seja definido já no cadastro da Vaga.
+
+## D-003 — Troca de supervisor/orientador
+
+É possível substituir supervisor ou orientador durante o estágio? Se sim, quais registros/documentos precisam manter histórico?
 
 ## D-004 — Origem do estágio
-Confirmamos pelo regulamento que o Estágio pode existir sem Candidatura. Para a implementação, vale registrar explicitamente a origem (vaga publicada, contato direto, extensão, pesquisa, Empresa Júnior etc.)?
+
+Para a implementação, vale manter explicitamente a origem do Estágio como VAGA_PUBLICADA, CONTATO_DIRETO, PROJETO_EXTENSAO, PROJETO_PESQUISA, EMPRESA_JUNIOR etc., ou o professor prefere relacionamentos específicos?
 
 ## D-005 — Carga horária simultânea
-Qual é exatamente a regra de validação quando o aluno possui dois ou mais estágios simultâneos?
+
+Qual regra a FACSI deseja aplicar quando o aluno possui dois ou mais estágios simultâneos?
+
+> A Lei nº 11.788/2008 limita, como regra geral do ensino superior, cada jornada pactuada a 6 horas diárias e 30 semanais, mas não encontramos regra federal explícita dizendo como somar dois vínculos simultâneos. Na reunião, isso apareceu como requisito a controlar.
 
 ## D-006 — Orientador
-O orientador é escolhido individualmente ou determinado pela modalidade/tipo do estágio?
 
-## D-007 — Plano de Atividades
-O Plano de Atividades pode ser alterado depois de aprovado? É necessário versionamento?
+Como o orientador é escolhido em cada estágio: indicação individual, coordenação ou alguma regra por modalidade?
+
+> Já está confirmado que deve ser professor orientador da instituição.
+
+## D-007 — Aditivos e Plano de Atividades
+
+A lei confirma que o Plano de Atividades evolui por aditivos ao Termo. Na prática da FACSI, quem aprova cada alteração e quais outros tipos de mudança também geram aditivo?
 
 ## D-008 — Convênio
-Além dos cursos contemplados, existem restrições por campus, unidade ou modalidade?
+
+Além dos cursos contemplados, existem restrições de convênio por campus, unidade acadêmica ou modalidade?
 
 ## D-009 — Encerramento
-Quais pendências impedem formalmente o encerramento?
+
+Quais pendências impedem formalmente o encerramento de um estágio?
 
 ## D-010 — Novo estágio com pendências
-Um aluno pode iniciar novo estágio se ainda houver pendências do anterior?
+
+Um aluno pode iniciar novo estágio se ainda houver pendências do vínculo anterior?
