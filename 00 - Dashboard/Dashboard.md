@@ -37,8 +37,9 @@ Iniciar a Sprint 05 de refinamento do modelo e UML final.
 - [ ] adicionar Frequência
 - [ ] adicionar Relatório e Avaliação
 - [ ] revisar validadores
-- [ ] revisar enums e cardinalidades
-- [ ] tratar pendências técnicas prioritárias
+- [x] revisar enums
+- [ ] revisar cardinalidades
+- [x] tratar pendências técnicas prioritárias
 - [ ] gerar UML final
 
 ## Linha do tempo
