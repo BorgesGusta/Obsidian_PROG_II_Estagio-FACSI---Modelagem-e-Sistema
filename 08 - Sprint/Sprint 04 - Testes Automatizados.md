@@ -2,7 +2,7 @@
 
 ## Status
 
-🟡 Concluída localmente, aguardando commit e push
+✅ Concluída
 
 ## Objetivo
 
@@ -58,8 +58,8 @@ Transformar as regras implementadas em verificações automáticas com JUnit 5.
 - [x] mvn test — BUILD SUCCESS
 - [x] mvn compile — BUILD SUCCESS
 - [x] nenhum bug de produção encontrado
-- [ ] commit
-- [ ] push
+- [x] commit
+- [x] push
 
 ## Pontos de atenção para refinamento
 
