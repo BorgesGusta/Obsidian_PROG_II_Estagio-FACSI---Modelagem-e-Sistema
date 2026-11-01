@@ -4,7 +4,7 @@
 
 > Estado do projeto: implementação Java avançada.
 >
-> As Sprints 01, 02 e 03 estão concluídas. A Sprint 04 está funcionalmente concluída localmente: 32 testes automatizados passam juntos, faltando apenas versionar as alterações.
+> As Sprints 01, 02 e 03 estão concluídas. A Sprint 04 está concluída e versionada: 32 testes automatizados passam juntos.
 
 ---
 
@@ -73,7 +73,7 @@
 ---
 
 ### Sprint 04 — Testes automatizados
-**Status:** 🟡 Concluída localmente, aguardando commit e push
+**Status:** ✅ Concluída
 
 #### Parte 1 — Carga horária e simultaneidade
 - [x] JUnit 5 configurado
@@ -117,8 +117,8 @@
 - [x] mvn test — BUILD SUCCESS
 - [x] mvn compile — BUILD SUCCESS
 - [x] nenhum bug de produção encontrado
-- [ ] commit
-- [ ] push
+- [x] commit
+- [x] push
 
 ### Pontos para refinamento
 - [ ] avaliar inconsistência remunerado=false com valor de bolsa preenchido
@@ -163,9 +163,9 @@
 
 ## Próxima ação imediata
 
-1. versionar os testes da Sprint 04;
-2. confirmar working tree limpa;
-3. iniciar Sprint 05 — refinamento do domínio e UML final.
+1. iniciar Sprint 05 — refinamento do domínio e UML final;
+2. comparar a UML candidata com o código atual;
+3. decidir quais refinamentos entram antes da UML final.
 
 ## Fora por enquanto
 
