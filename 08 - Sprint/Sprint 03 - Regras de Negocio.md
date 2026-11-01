@@ -2,7 +2,7 @@
 
 ## Status
 
-🟡 Em andamento
+✅ Concluída
 
 ## Objetivo
 
@@ -26,28 +26,41 @@ Fazer o sistema deixar de apenas armazenar dados e passar a validar regras reais
 - [x] Commit realizado
 - [x] Push realizado
 
-### Decisões adiadas
+## Parte 2 — Formalização e encerramento
+
+**Status:** ✅ Concluída
+
+- [x] verificar Termo
+- [x] verificar Plano de Atividades
+- [x] verificar Seguro
+- [x] criar AmbitoEstagio
+- [x] exigir Convênio para estágio EXTERNO
+- [x] permitir INTERNO sem convênio externo
+- [x] bloquear início sem âmbito definido
+- [x] exigir bolsa e auxílio-transporte no não obrigatório
+- [x] criar regra podeIniciar()
+- [x] criar regra podeEncerrar()
+- [x] exigir 170 horas no obrigatório
+- [x] controlar início por iniciar()
+- [x] controlar encerramento por encerrar(LocalDate)
+- [x] registrar dataFimReal
+- [x] criar cenários válidos e inválidos
+- [x] BUILD SUCCESS
+- [x] execução sem exceções
+- [x] commit realizado
+- [x] push realizado
+
+## Decisões adiadas
+
 - horas fracionadas;
 - comparação por equals/id em vez de referência;
 - exceção de até 40h;
-- semana de transição entre estágios não sobrepostos.
+- cancelar estágio;
+- impedir alterações estruturais depois do início;
+- enum para resultado da avaliação;
+- semana de transição entre estágios não sobrepostos;
+- eventual refinamento da dependência entre model e regras.
 
-## Parte 2 — Formalização e encerramento
+## Próxima etapa
 
-**Status:** ⬜ Não iniciada
-
-- [ ] verificar Termo
-- [ ] verificar Plano de Atividades
-- [ ] verificar Seguro
-- [ ] verificar Convênio quando aplicável
-- [ ] verificar contrapartida financeira do estágio não obrigatório
-- [ ] criar regra podeIniciar()
-- [ ] criar regra podeEncerrar()
-- [ ] avaliar carga horária mínima obrigatória
-- [ ] definir transições de status
-- [ ] revisar status textuais
-- [ ] criar cenários válidos e inválidos
-- [ ] BUILD SUCCESS
-- [ ] execução sem exceções
-- [ ] commit
-- [ ] push
+Sprint 04 — testes automatizados com JUnit.
