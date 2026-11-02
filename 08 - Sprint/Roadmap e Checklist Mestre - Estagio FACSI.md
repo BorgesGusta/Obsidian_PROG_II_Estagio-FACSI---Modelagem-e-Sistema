@@ -129,7 +129,7 @@
 ---
 
 ### Sprint 05 — Refinamento e UML final
-**Status:** 🟡 Em andamento
+**Status:** ✅ Concluída
 
 - [x] Comparar código com UML
 - [x] Atualizar Pessoa / Profissional
@@ -141,7 +141,7 @@
 - [x] Revisar pendências técnicas registradas
 - [ ] Incorporar feedback do professor
 - [x] Gerar UML final
-- [ ] Gerar imagem final do diagrama
+- [x] Gerar imagem final do diagrama
 
 ---
 
@@ -163,9 +163,9 @@
 
 ## Próxima ação imediata
 
-1. versionar os refinamentos da Sprint 05;
-2. atualizar o PlantUML com o código consolidado;
-3. revisar cardinalidades e gerar a UML final.
+1. iniciar Sprint 06 — entrega e apresentação;
+2. revisar README e documentação final;
+3. preparar cenário demonstrável e roteiro de apresentação.
 
 ## Fora por enquanto
 
