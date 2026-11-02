@@ -1,8 +1,12 @@
 @startuml
 title Estágio FACSI — Diagrama de Classes — Domínio Final
 
+top to bottom direction
 skinparam classAttributeIconSize 0
 skinparam linetype ortho
+skinparam nodesep 22
+skinparam ranksep 28
+skinparam packageStyle rectangle
 hide empty members
 
 package "Pessoas" {
@@ -11,13 +15,11 @@ package "Pessoas" {
     - nome : String
     - cpf : String
     - email : String
-    - telefone : String
   }
 
   class Aluno {
     - matricula : String
     - curso : String
-    - situacaoAcademica : String
   }
 
   class Professor {
@@ -42,8 +44,6 @@ package "Institucional" {
     - nome : String
     - tipo : String
     - documento : String
-    - email : String
-    - telefone : String
   }
 
   class Convenio {
@@ -62,14 +62,10 @@ package "Oportunidade" {
   class Vaga {
     - id : Long
     - titulo : String
-    - descricao : String
     - modalidade : ModalidadeEstagio
-    - cargaHorariaDiaria : Integer
     - cargaHorariaSemanal : Integer
     - valorBolsaOfertado : BigDecimal
     - valorAuxilioTransporteOfertado : BigDecimal
-    - duracaoPrevista : String
-    - requisitos : String
     - status : String
   }
 
@@ -78,7 +74,6 @@ package "Oportunidade" {
     - dataCandidatura : LocalDate
     - dataDecisao : LocalDate
     - status : String
-    - observacao : String
   }
 
   Concedente "1" -- "0..*" Vaga
@@ -87,6 +82,79 @@ package "Oportunidade" {
 }
 
 package "Vínculo de Estágio" {
+  class Estagio {
+    {static} + LIMITE_HORAS_DIARIAS : int = 6
+    {static} + LIMITE_HORAS_SEMANAIS : int = 30
+    - id : Long
+    - modalidade : ModalidadeEstagio
+    - origem : OrigemEstagio
+    - ambito : AmbitoEstagio
+    - dataInicio : LocalDate
+    - dataFimPrevista : LocalDate
+    - dataFimReal : LocalDate
+    - cargaHorariaTotalPrevista : Integer
+    - status : StatusEstagio
+    + iniciar() : boolean
+    + encerrar(dataFimReal : LocalDate) : boolean
+    + calcularHorasRealizadas() : int
+    + calcularHorasNaData(data : LocalDate) : int
+    + calcularHorasNaSemana(data : LocalDate) : int
+    + possuiPeriodoSobreposto(outro : Estagio) : boolean
+  }
+}
+
+package "Documentos e acompanhamento" {
+  class TermoCompromisso {
+    - dataCriacao : LocalDate
+    - remunerado : boolean
+    - valorRemuneracao : BigDecimal
+    - valorAuxilioTransporte : BigDecimal
+    - status : String
+  }
+
+  class PlanoAtividades {
+    - areaAtuacao : String
+    - objetivoGeral : String
+    - descricaoAtividades : String
+    - cronograma : String
+    - status : String
+  }
+
+  class ApoliceSeguro {
+    - numero : String
+    - seguradora : String
+    - dataInicio : LocalDate
+    - dataFim : LocalDate
+    + estaVigenteEm(data : LocalDate) : boolean
+  }
+
+  class RegistroFrequencia {
+    - data : LocalDate
+    - quantidadeHoras : Integer
+    - descricaoAtividade : String
+  }
+
+  class RelatorioFinal {
+    - temaObjeto : String
+    - atividadesRealizadas : String
+    - conclusao : String
+    - dataEntrega : LocalDate
+  }
+
+  class AvaliacaoEstagio {
+    - dataAvaliacao : LocalDate
+    - parecerSupervisor : String
+    - parecerOrientador : String
+    - resultado : String
+  }
+
+  TermoCompromisso -[hidden]right- PlanoAtividades
+  PlanoAtividades -[hidden]right- ApoliceSeguro
+  RegistroFrequencia -[hidden]right- RelatorioFinal
+  RelatorioFinal -[hidden]right- AvaliacaoEstagio
+}
+
+package "Tipos do Estágio" {
   enum ModalidadeEstagio {
     OBRIGATORIO
     NAO_OBRIGATORIO
@@ -113,118 +181,41 @@ package "Vínculo de Estágio" {
     CANCELADO
   }
 
-  class Estagio {
-    {static} + LIMITE_HORAS_DIARIAS : int = 6
-    {static} + LIMITE_HORAS_SEMANAIS : int = 30
-    - id : Long
-    - modalidade : ModalidadeEstagio
-    - origem : OrigemEstagio
-    - ambito : AmbitoEstagio
-    - dataInicio : LocalDate
-    - dataFimPrevista : LocalDate
-    - dataFimReal : LocalDate
-    - cargaHorariaDiaria : Integer
-    - cargaHorariaSemanal : Integer
-    - cargaHorariaTotalPrevista : Integer
-    - status : StatusEstagio
-    + iniciar() : boolean
-    + encerrar(dataFimReal : LocalDate) : boolean
-    + calcularHorasRealizadas() : int
-    + calcularHorasNaData(data : LocalDate) : int
-    + calcularHorasNaSemana(dataReferencia : LocalDate) : int
-    + respeitaLimiteDiario() : boolean
-    + respeitaLimiteSemanal() : boolean
-    + estaVigenteEm(data : LocalDate) : boolean
-    + possuiPeriodoSobreposto(outro : Estagio) : boolean
-  }
-
-  class TermoCompromisso {
-    - id : Long
-    - dataCriacao : LocalDate
-    - remunerado : boolean
-    - valorRemuneracao : BigDecimal
-    - valorAuxilioTransporte : BigDecimal
-    - status : String
-  }
-
-  class PlanoAtividades {
-    - id : Long
-    - areaAtuacao : String
-    - justificativa : String
-    - objetivoGeral : String
-    - objetivosEspecificos : String
-    - descricaoAtividades : String
-    - adequacaoPedagogica : String
-    - cronograma : String
-    - status : String
-  }
-
-  class ApoliceSeguro {
-    - id : Long
-    - numero : String
-    - seguradora : String
-    - dataInicio : LocalDate
-    - dataFim : LocalDate
-    - documentoReferencia : String
-    + estaVigenteEm(data : LocalDate) : boolean
-  }
-
-  class RegistroFrequencia {
-    - id : Long
-    - data : LocalDate
-    - quantidadeHoras : Integer
-    - descricaoAtividade : String
-  }
-
-  class RelatorioFinal {
-    - id : Long
-    - temaObjeto : String
-    - justificativa : String
-    - objetivos : String
-    - metodologia : String
-    - atividadesRealizadas : String
-    - dificuldadesEncontradas : String
-    - conclusao : String
-    - dataEntrega : LocalDate
-  }
-
-  class AvaliacaoEstagio {
-    - id : Long
-    - dataAvaliacao : LocalDate
-    - parecerSupervisor : String
-    - parecerOrientador : String
-    - resultado : String
-    - observacao : String
-  }
-
-  Aluno "1" -- "0..*" Estagio
-  Concedente "1" -- "0..*" Estagio
-  Convenio "0..1" -- "0..*" Estagio : fundamenta
-
-  Vaga "0..1" -- "0..1" Estagio : origem
-  Candidatura "0..1" -- "0..1" Estagio : origina
-
-  Estagio "0..*" --> "0..1" Pessoa : supervisor
-  Estagio "0..*" --> "0..1" Professor : orientador
-
-  Estagio "1" -- "0..1" TermoCompromisso
-  Estagio "1" -- "0..*" PlanoAtividades : histórico
-  Estagio "0..*" -- "0..*" ApoliceSeguro : cobertura
-  Estagio "1" -- "0..*" RegistroFrequencia
-  Estagio "1" -- "0..1" RelatorioFinal
-  Estagio "1" -- "0..1" AvaliacaoEstagio
+  ModalidadeEstagio -[hidden]right- OrigemEstagio
+  AmbitoEstagio -[hidden]right- StatusEstagio
 }
+
+Aluno "1" -down- "0..*" Estagio
+Concedente "1" -down- "0..*" Estagio
+Convenio "0..1" -down- "0..*" Estagio : fundamenta
+Vaga "0..1" -down- "0..1" Estagio : origem
+Candidatura "0..1" -down- "0..1" Estagio : origina
+
+Estagio "0..*" --> "0..1" Pessoa : supervisor
+Estagio "0..*" --> "0..1" Professor : orientador
+
+Estagio "1" -down- "0..1" TermoCompromisso
+Estagio "1" -down- "0..*" PlanoAtividades : histórico
+Estagio "0..*" -down- "0..*" ApoliceSeguro : cobertura
+Estagio "1" -down- "0..*" RegistroFrequencia
+Estagio "1" -down- "0..1" RelatorioFinal
+Estagio "1" -down- "0..1" AvaliacaoEstagio
+
+Estagio ..> ModalidadeEstagio
+Estagio ..> OrigemEstagio
+Estagio ..> AmbitoEstagio
+Estagio ..> StatusEstagio
 
 note right of Estagio
   Estado inicial: EM_FORMALIZACAO.
   iniciar() valida período, documentos,
-  convênio quando externo e seguro vigente.
-  encerrar() exige requisitos de conclusão
-  e data final coerente com a frequência.
+  convênio externo e seguro vigente.
+  encerrar() exige conclusão válida
+  e data coerente com a frequência.
 end note
 
 note bottom of AvaliacaoEstagio
-  resultado permanece String no código atual.
+  resultado permanece String.
   Conceitos oficiais ainda dependem
   de validação acadêmica.
 end note
