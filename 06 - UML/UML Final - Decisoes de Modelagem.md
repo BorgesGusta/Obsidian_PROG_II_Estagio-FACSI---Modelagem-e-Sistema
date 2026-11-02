@@ -9,7 +9,7 @@
 
 ### Diagrama principal
 
-O diagrama principal prioriza o domínio e evita poluição visual com detalhes de infraestrutura ou todos os getters/setters.
+O diagrama principal prioriza o domínio e evita poluição visual com detalhes de infraestrutura, getters/setters e atributos secundários. Após a primeira renderização, a composição foi compactada para melhorar leitura em tela e apresentação, sem alterar relações ou cardinalidades.
 
 Foram incorporadas as evoluções posteriores à Sprint 01:
 
