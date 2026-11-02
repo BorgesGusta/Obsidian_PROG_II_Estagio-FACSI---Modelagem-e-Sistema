@@ -2,7 +2,7 @@
 
 ## Status
 
-🟡 Em andamento
+✅ Concluída
 
 ## Objetivo
 
@@ -94,8 +94,8 @@ Cada diferença será marcada como:
 - [x] revisar dependências das classes de regras
 - [x] gerar PlantUML final
 - [x] validar consistência com o código
-- [ ] validar visual da versão compactada
-- [ ] gerar imagem final
+- [x] validar visual da versão compactada
+- [x] gerar imagem final
 
 ## Definição de pronto
 
