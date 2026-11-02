@@ -94,6 +94,7 @@ Cada diferença será marcada como:
 - [x] revisar dependências das classes de regras
 - [x] gerar PlantUML final
 - [x] validar consistência com o código
+- [ ] validar visual da versão compactada
 - [ ] gerar imagem final
 
 ## Definição de pronto
