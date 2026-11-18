@@ -15,11 +15,13 @@ package "Pessoas" {
     - nome : String
     - cpf : String
     - email : String
+    - telefone : String
   }
 
   class Aluno {
     - matricula : String
     - curso : String
+    - situacaoAcademica : String
   }
 
   class Professor {
@@ -92,13 +94,19 @@ package "Vínculo de Estágio" {
     - dataInicio : LocalDate
     - dataFimPrevista : LocalDate
     - dataFimReal : LocalDate
+    - cargaHorariaDiaria : Integer
+    - cargaHorariaSemanal : Integer
     - cargaHorariaTotalPrevista : Integer
     - status : StatusEstagio
     + iniciar() : boolean
     + encerrar(dataFimReal : LocalDate) : boolean
+    + adicionarRegistroFrequencia(registro : RegistroFrequencia) : boolean
     + calcularHorasRealizadas() : int
     + calcularHorasNaData(data : LocalDate) : int
     + calcularHorasNaSemana(data : LocalDate) : int
+    + respeitaLimiteDiario() : boolean
+    + respeitaLimiteSemanal() : boolean
+    + estaVigenteEm(data : LocalDate) : boolean
     + possuiPeriodoSobreposto(outro : Estagio) : boolean
   }
 }
@@ -210,7 +218,9 @@ note right of Estagio
   Estado inicial: EM_FORMALIZACAO.
   iniciar() valida período, documentos,
   convênio externo e seguro vigente.
-  encerrar() exige conclusão válida
+  encerrar() exige relatório, avaliação APROVADO,
+  frequência, 170h quando obrigatório,
+  limites de 6h/dia e 30h/semana regulares
   e data coerente com a frequência.
 end note
 

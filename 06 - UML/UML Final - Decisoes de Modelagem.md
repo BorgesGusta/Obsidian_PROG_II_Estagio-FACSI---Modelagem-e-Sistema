@@ -19,12 +19,12 @@ Foram incorporadas as evoluções posteriores à Sprint 01:
 - RelatorioFinal;
 - AvaliacaoEstagio;
 - iniciar() e encerrar(LocalDate);
-- métodos centrais de cálculo e vigência;
+- métodos centrais de cálculo, vigência e verificação dos limites diário/semanal;
 - vigência em Convenio e ApoliceSeguro.
 
 ### Supervisor e Orientador
 
-No código atual, supervisor e orientador podem estar nulos. Por isso a multiplicidade do lado de Estagio foi representada como 0..1.
+No código atual, supervisor e orientador podem estar nulos. Por isso cada Estagio possui 0..1 supervisor e 0..1 orientador. Uma Pessoa/Professor pode estar associada a 0..* estágios.
 
 A obrigatoriedade operacional e o momento de definição desses papéis continuam como pontos a validar com o professor.
 
@@ -44,6 +44,12 @@ ValidadorEstagio e ValidadorCargaHoraria foram mantidos fora do diagrama princip
 
 O diagrama técnico complementar registra essas classes, seus principais métodos e a dependência atual com Estagio.
 
+### Encerramento e limites de carga horária
+
+O registro de frequência pode ser preservado mesmo quando identifica uma irregularidade de carga horária. O encerramento, porém, só é permitido quando os limites de 6h/dia e 30h/semana estão regulares.
+
+Essa decisão permite manter evidência do registro realizado sem tratar uma carga irregular como válida para conclusão do estágio.
+
 ## Cardinalidades principais
 
 - Aluno 1 ↔ 0..* Estagio
@@ -60,4 +66,4 @@ O diagrama técnico complementar registra essas classes, seus principais método
 
 ## Situação
 
-O diagrama reflete o código consolidado após o commit Java `da97610`, com 48 testes automatizados passando.
+O diagrama reflete o código consolidado após o commit Java `2665ff2`, com 72 testes automatizados passando (0 falhas e 0 erros na validação de 17/11/2026).

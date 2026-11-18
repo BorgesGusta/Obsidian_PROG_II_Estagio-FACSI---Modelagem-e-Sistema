@@ -35,6 +35,9 @@ package "Regras" {
     {static} + RESULTADO_APROVADO : String
     {static} + podeIniciar(estagio : Estagio) : boolean
     {static} + podeEncerrar(estagio : Estagio) : boolean
+    {static} + listarPendenciasEncerramento(estagio : Estagio) : List<String>
+    {static} + exigeCargaHorariaMinima(estagio : Estagio) : boolean
+    {static} + calcularHorasFaltantes(estagio : Estagio) : int
     {static} + exigeConvenio(estagio : Estagio) : boolean
     {static} + possuiContrapartidaFinanceira(termo : TermoCompromisso) : boolean
   }
@@ -65,7 +68,8 @@ note right of ValidadorEstagio
   - seguro vigente no início;
   - bolsa + auxílio no não obrigatório;
   - 170h no obrigatório para encerrar;
-  - relatório, avaliação e frequência.
+  - relatório, avaliação APROVADO e frequência;
+  - limites de 6h/dia e 30h/semana regulares.
 end note
 
 note bottom of Estagio
