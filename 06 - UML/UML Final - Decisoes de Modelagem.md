@@ -66,4 +66,4 @@ Essa decisão permite manter evidência do registro realizado sem tratar uma car
 
 ## Situação
 
-O diagrama reflete o código consolidado após o commit Java `2665ff2`, com 72 testes automatizados passando (0 falhas e 0 erros na validação de 17/11/2026).
+O diagrama reflete o código consolidado após o commit Java `2665ff2`, com 73 testes automatizados passando (0 falhas e 0 erros na validação de 17/11/2026), incluindo teste de integração do fluxo de terminal.
